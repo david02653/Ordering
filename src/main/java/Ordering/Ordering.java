@@ -19,36 +19,6 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 public class Ordering {
-	public static String getCinemaCatalog(String userID) {
-		try {  
-            
-			
-			
-            MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4118");
-            
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("Movies");
-            System.out.println("MongoDBConnect to database successfully");
-
-            String result = "[";
-            MongoCollection<Document> collection = mongoDatabase.getCollection("Movie");
-            FindIterable<Document> fi = collection.find();
-            MongoCursor<Document> cursor = fi.iterator();
-            while(cursor.hasNext()) 
-            {
-            	result += cursor.next().toJson();
-            	if(cursor.hasNext())
-            		result += ",";
-            }
-            result += "]";
-            System.out.println("Connect to database successfully");
-            return result;
-            
-        } catch (Exception e) {  
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            return "{}";
-        }
-	}
-	
 	
 	public static String orderingMovie(String moviesID) {
 		try {
@@ -66,8 +36,11 @@ public class Ordering {
 	         
 	         ArrayList<Document> documents = new ArrayList<Document>();
 	         
+	         
+	         // split moviesID from ,
 	         String[] moviesIDArr = moviesID.split(",");
 	         
+	         // insert into documents
 	         for(int i = 0; i < moviesIDArr.length; i++) {
 		         Document doc = new Document("ObjectID", moviesIDArr[i])
 		        		    .append("Category", "Movie")
@@ -76,6 +49,7 @@ public class Ordering {
 		         documents.add(doc);
 	         }
 
+	         // insert into collecion
     		collection.insertMany(documents);
 			
 	         return "succeess";
@@ -84,6 +58,7 @@ public class Ordering {
             return e.getClass().getName() + ": " + e.getMessage();
         }
 	}
+	
 	
 
 }

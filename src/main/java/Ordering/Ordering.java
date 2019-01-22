@@ -61,22 +61,22 @@ public class Ordering {
 	         
 	         MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
 	         
-	         /*
-	         Document doc1 = new Document("ObjectID", "123")
-	        		    .append("Category", "test")
-	        		    .append("Quantity", 666);
-	
-	         Document doc2 = new Document("ObjectID", "321")
-	        		    .append("Category", "test2")
-	        		    .append("Quantity", 222);
-
-    		ArrayList<Document> documents = new ArrayList<Document>();
-    		documents.add(doc1);
-    		documents.add(doc2);
+	         
+	         ArrayList<Document> documents = new ArrayList<Document>();
+	         
+	         String[] moviesIDArr = moviesID.split(",");
+	         
+	         for(int i = 0; i < moviesIDArr.length; i++) {
+		         Document doc = new Document("ObjectID", moviesIDArr[i])
+		        		    .append("Category", "Movie")
+		        		    .append("Quantity", 0);
+		         
+		         documents.add(doc);
+	         }
 
     		collection.insertMany(documents);
-			*/
-	         return moviesID;
+			
+	         return "succeess";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             return e.getClass().getName() + ": " + e.getMessage();

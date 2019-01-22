@@ -22,7 +22,7 @@ public class OrderingController {
 	
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "orderingMovie", method = RequestMethod.GET)
-    public String getMovie(@RequestParam("moviesID") String moviesID)
+    public String orderMovie(@RequestParam("moviesID") String moviesID)
     {
     	return Ordering.orderingMovie(moviesID);
     }

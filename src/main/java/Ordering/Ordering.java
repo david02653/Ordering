@@ -52,6 +52,8 @@ public class Ordering {
 	
 	public static String orderingMovie(String moviesID) {
 		try {
+			
+			
 			System.out.println("MongoDBConnect to database orderinglist begin");
 			
 			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");

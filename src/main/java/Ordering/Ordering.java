@@ -69,13 +69,13 @@ public class Ordering {
 	         Document doc2 = new Document("ObjectID", "321")
 	        		    .append("Category", "test2")
 	        		    .append("Quantity", 222);
-*/
+
     		ArrayList<Document> documents = new ArrayList<Document>();
     		documents.add(doc1);
     		documents.add(doc2);
 
     		collection.insertMany(documents);
-			
+			*/
 	         return moviesID;
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

@@ -54,7 +54,7 @@ public class Ordering {
 		try {
 			System.out.println("MongoDBConnect to database orderinglist begin");
 			
-			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4118");
+			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
 			
 			 MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
 	         System.out.println("MongoDBConnect to database successfully");

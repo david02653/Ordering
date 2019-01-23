@@ -52,7 +52,7 @@ public class Ordering {
 	         // insert into collecion
     		collection.insertMany(documents);
 			
-	         return "succeess";
+	         return "Ordering success.";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             return e.getClass().getName() + ": " + e.getMessage();

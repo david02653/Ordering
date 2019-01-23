@@ -20,7 +20,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class Ordering {
 	
-	public static String orderingMovie(String moviesID) {
+	public static String newMovie(String moviesID) {
 		try {
 			
 			

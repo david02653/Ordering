@@ -20,7 +20,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class Ordering {
 	
-	public static String newMovie(String moviesID) {
+	public static String newMovieOrdering(String moviesID) {
 		try {
 			
 			
@@ -45,6 +45,46 @@ public class Ordering {
 		         Document doc = new Document("ObjectID", moviesIDArr[i])
 		        		    .append("Category", "Movie")
 		        		    .append("Quantity", 0);
+		         
+		         documents.add(doc);
+	         }
+
+	         // insert into collecion
+    		collection.insertMany(documents);
+			
+	         return "Ordering success.";
+		} catch (Exception e) {  
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            return e.getClass().getName() + ": " + e.getMessage();
+        }
+	}
+	
+	public static String newGroceryOrdering(String groceryID, String quantity) {
+		try {
+			
+			
+			System.out.println("MongoDBConnect to database orderinglist begin");
+			
+			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
+			
+			 MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
+	         System.out.println("MongoDBConnect to database successfully");
+	         
+	         MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+	         
+	         
+	         ArrayList<Document> documents = new ArrayList<Document>();
+	         
+	         
+	         // 
+	         String[] groceryIDArr = groceryID.split(",");
+	         String[] quantityArr = groceryID.split(",");
+	         
+	         // insert into documents
+	         for(int i = 0; i < groceryIDArr.length; i++) {
+		         Document doc = new Document("ObjectID", groceryIDArr[i])
+		        		    .append("Category", "Grocery")
+		        		    .append("Quantity", quantityArr[i]);
 		         
 		         documents.add(doc);
 	         }

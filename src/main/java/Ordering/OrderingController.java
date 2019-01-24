@@ -21,10 +21,17 @@ public class OrderingController {
     }
 	
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "newMovie", method = RequestMethod.GET)
-    public String newMovie(@RequestParam("moviesID") String moviesID)
+	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
+    public String newMovieOrdering(@RequestParam("moviesID") String moviesID)
     {
-    	return Ordering.newMovie(moviesID);
+    	return Ordering.newMovieOrdering(moviesID);
+    }
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
+    public String newGroceryOrdering(@RequestParam("groceryID") String groceryID, @RequestParam("quantity") String quantity)
+    {
+    	return Ordering.newGroceryOrdering(groceryID, quantity);
     }
 	
 }

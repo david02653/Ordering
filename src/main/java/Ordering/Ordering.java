@@ -78,7 +78,7 @@ public class Ordering {
 	         
 	         // 
 	         String[] groceryIDArr = groceryID.split(",");
-	         String[] quantityArr = groceryID.split(",");
+	         String[] quantityArr = quantity.split(",");
 	         
 	         // insert into documents
 	         for(int i = 0; i < groceryIDArr.length; i++) {

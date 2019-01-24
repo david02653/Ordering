@@ -34,4 +34,11 @@ public class OrderingController {
     	return Ordering.newGroceryOrdering(groceryID, quantity);
     }
 	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "notification", method = RequestMethod.GET)
+    public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
+    {
+    	return Ordering.notification(userID, content);
+    }
+	
 }

@@ -131,6 +131,29 @@ public class Ordering {
 		return result;
 	}
 	
+	public static String notification(String userID, String content) {
+		String result = "";
+		try {
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			URLConnection urlConnection = url.openConnection();
+			
+			
+			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
+			String current = "";
+			while((current = in.readLine()) != null)
+	         {
+				result += current;
+	         }
+			
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		return result;
+	}
+	
 	
 
 }

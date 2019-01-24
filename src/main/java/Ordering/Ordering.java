@@ -1,10 +1,12 @@
 package Ordering;
 
 import java.util.ArrayList;
-
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -51,6 +53,9 @@ public class Ordering {
 
 	         // insert into collecion
     		collection.insertMany(documents);
+    		
+    		// checkout , write deadly
+    		payment("1","250");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
@@ -91,12 +96,39 @@ public class Ordering {
 
 	         // insert into collecion
     		collection.insertMany(documents);
+    		
+    		// checkout , write deadly
+    		payment("1","250");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             return e.getClass().getName() + ": " + e.getMessage();
         }
+	}
+	
+	
+	public static String payment(String userID, String price) {
+		String result = "";
+		try {
+			URL url = new URL("http://140.121.196.23:4106/Payment");
+			URLConnection urlConnection = url.openConnection();
+			
+			
+			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
+			String current = "";
+			while((current = in.readLine()) != null)
+	         {
+				result += current;
+	         }
+			
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		return result;
 	}
 	
 	

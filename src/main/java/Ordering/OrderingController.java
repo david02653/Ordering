@@ -28,7 +28,7 @@ public class OrderingController {
     }
 	
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
+	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.GET)
     public String newGroceryOrdering(@RequestParam("groceryID") String groceryID, @RequestParam("quantity") String quantity)
     {
     	return Ordering.newGroceryOrdering(groceryID, quantity);

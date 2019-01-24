@@ -58,6 +58,8 @@ public class Ordering {
     		
     		// checkout , write deadly
     		payment("1","250");
+    		
+    		notification("1","成功購買電影");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
@@ -101,7 +103,9 @@ public class Ordering {
     		
     		// checkout , write deadly
     		payment("1","250");
-			
+    		notification("1","成功購買周邊商品");
+    		
+    		
 	         return "Ordering success.";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

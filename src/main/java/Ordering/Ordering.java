@@ -168,7 +168,7 @@ public class Ordering {
 
             String result = "[";
             MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
-            FindIterable<Document> fi = collection.find(eq("Catagory","Movie"));
+            FindIterable<Document> fi = collection.find(eq("Category","Movie"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
             {
@@ -199,7 +199,7 @@ public class Ordering {
 
             String result = "[";
             MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
-            FindIterable<Document> fi = collection.find(eq("Catagory","Grocery"));
+            FindIterable<Document> fi = collection.find(eq("Category","Grocery"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
             {

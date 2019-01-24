@@ -41,4 +41,11 @@ public class OrderingController {
     	return Ordering.notification(userID, content);
     }
 	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "getMovieByOrderList", method = RequestMethod.GET)
+    public String getMovieByOrderList(@RequestParam("userID") String userID)
+    {
+    	return Ordering.getMovieByOrderList(userID);
+    }
+	
 }

@@ -48,4 +48,12 @@ public class OrderingController {
     	return Ordering.getMovieByOrderList(userID);
     }
 	
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "getGroceryByOrderList", method = RequestMethod.GET)
+    public String getGroceryByOrderList(@RequestParam("userID") String userID)
+    {
+    	return Ordering.getGroceryByOrderList(userID);
+    }
+	
 }

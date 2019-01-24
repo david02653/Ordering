@@ -59,7 +59,7 @@ public class Ordering {
     		// checkout , write deadly
     		payment("1","250");
     		
-    		notification("1","成功購買電影");
+    		notification("1","Ordering Movies successfully.");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
@@ -103,7 +103,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		payment("1","250");
-    		notification("1","成功購買周邊商品");
+    		notification("1","Ordering Grocery successfully.");
     		
     		
 	         return "Ordering success.";

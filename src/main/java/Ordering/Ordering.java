@@ -20,6 +20,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
+import static com.mongodb.client.model.Filters.*;
+
 public class Ordering {
 	
 	public static String newMovieOrdering(String moviesID) {
@@ -152,6 +154,36 @@ public class Ordering {
 			e.printStackTrace();
 		} 
 		return result;
+	}
+	
+	public static String getMovieByOrderList(String userID) {
+		try {  
+		            
+			System.out.println("MongoDBConnect to database begin");
+			
+            MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
+            
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
+            System.out.println("MongoDBConnect to database successfully");
+
+            String result = "[";
+            MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+            FindIterable<Document> fi = collection.find(eq("Catagory","Movie"));
+            MongoCursor<Document> cursor = fi.iterator();
+            while(cursor.hasNext()) 
+            {
+            	result += cursor.next().toJson();
+            	if(cursor.hasNext())
+            		result += ",";
+            }
+            result += "]";
+            System.out.println("Connect to database successfully");
+            return result;
+            
+        } catch (Exception e) {  
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            return "{}";
+        }
 	}
 	
 	

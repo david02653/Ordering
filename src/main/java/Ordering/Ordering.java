@@ -150,7 +150,7 @@ public class Ordering {
 			
 			
 			
-			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "UTF-8"));
+			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "BIG5"));
 			URLConnection urlConnection = url.openConnection();
 			
 			

@@ -56,9 +56,12 @@ public class Ordering {
     		collection.insertMany(documents);
     		
     		// checkout , write deadly
-    		//payment("1","250");
     		
     		notification("1","Ordering Movies successfully.");
+    		
+    		payment("1","250");
+    		
+    		
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
@@ -101,9 +104,12 @@ public class Ordering {
     		collection.insertMany(documents);
     		
     		// checkout , write deadly
-    		//payment("1","250");
     		
     		notification("1","Ordering Grocery successfully.");
+    		
+    		payment("1","250");
+    		
+    		
     		
     		
 	         return "Ordering success.";

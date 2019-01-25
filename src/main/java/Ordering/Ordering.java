@@ -59,7 +59,7 @@ public class Ordering {
     		// checkout , write deadly
     		payment("1","250");
     		
-    		notification("1","Ordering Movies successfully.");
+    		notification("1","成功購買電影");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  

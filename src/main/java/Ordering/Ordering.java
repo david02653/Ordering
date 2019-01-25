@@ -103,7 +103,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		payment("1","250");
-    		notification("1","Ordering Grocery successfully.");
+    		notification("1","成功購買周邊");
     		
     		
 	         return "Ordering success.";
@@ -140,7 +140,7 @@ public class Ordering {
 	public static String notification(String userID, String content) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content.getBytes("UTF-8"));
 			URLConnection urlConnection = url.openConnection();
 			
 			

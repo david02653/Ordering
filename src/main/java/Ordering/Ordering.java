@@ -146,8 +146,9 @@ public class Ordering {
 	
 	public static String notification(String userID, String content) {
 		String result = "";
+		
+		
 		try {
-			
 			
 			
 			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "UTF-8"));
@@ -161,6 +162,7 @@ public class Ordering {
 				result += current;
 	         }
 			
+			result = url.toString();
 			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

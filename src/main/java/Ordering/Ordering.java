@@ -57,7 +57,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering Movies successfully.");
+    		notification("1","Ordering_Movies_successfully.");
     		
     		payment("1","250");
     		
@@ -105,7 +105,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering Grocery successfully.");
+    		notification("1","Ordering_Grocery_successfully.");
     		
     		payment("1","250");
     		

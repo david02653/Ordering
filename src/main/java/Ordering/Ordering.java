@@ -10,7 +10,6 @@ import java.net.URLConnection;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
-//import org.jsoup.Jsoup;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
@@ -57,7 +56,7 @@ public class Ordering {
     		collection.insertMany(documents);
     		
     		// checkout , write deadly
-    		payment("1","250");
+    		//payment("1","250");
     		
     		notification("1","Ordering Movies successfully.");
 			
@@ -102,7 +101,8 @@ public class Ordering {
     		collection.insertMany(documents);
     		
     		// checkout , write deadly
-    		payment("1","250");
+    		//payment("1","250");
+    		
     		notification("1","Ordering Grocery successfully.");
     		
     		

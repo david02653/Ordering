@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -57,7 +58,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Success.");
+    		notification("1","Ordering Movies Successfully.");
     		
     		payment("1","250");
     		
@@ -105,7 +106,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Success.");
+    		notification("1","Ordering Grocery successfully.");
     		
     		payment("1","250");
     		
@@ -146,7 +147,10 @@ public class Ordering {
 	public static String notification(String userID, String content) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			
+			
+			
+			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "UTF-8"));
 			URLConnection urlConnection = url.openConnection();
 			
 			

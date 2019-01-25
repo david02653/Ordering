@@ -57,7 +57,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering_Movies_successfully.");
+    		notification("1","Success.");
     		
     		payment("1","250");
     		
@@ -105,7 +105,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering_Grocery_successfully.");
+    		notification("1","Success.");
     		
     		payment("1","250");
     		
@@ -146,7 +146,7 @@ public class Ordering {
 	public static String notification(String userID, String content) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content.getBytes("uft-8"));
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
 			URLConnection urlConnection = url.openConnection();
 			
 			

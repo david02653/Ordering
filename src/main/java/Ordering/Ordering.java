@@ -154,6 +154,7 @@ public class Ordering {
 			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "UTF-8"));
 			URLConnection urlConnection = url.openConnection();
 			
+			result = url.toString();
 			
 			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
 			String current = "";
@@ -162,7 +163,7 @@ public class Ordering {
 				result += current;
 	         }
 			
-			result = url.toString();
+			
 			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

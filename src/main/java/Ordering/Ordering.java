@@ -59,7 +59,7 @@ public class Ordering {
     		// checkout , write deadly
     		payment("1","250");
     		
-    		notification("1","成功購買電影");
+    		notification("1","Ordering Movies successfully.");
 			
 	         return "Ordering success.";
 		} catch (Exception e) {  
@@ -103,7 +103,7 @@ public class Ordering {
     		
     		// checkout , write deadly
     		payment("1","250");
-    		notification("1","成功購買周邊");
+    		notification("1","Ordering Grocery successfully.");
     		
     		
 	         return "Ordering success.";
@@ -140,7 +140,7 @@ public class Ordering {
 	public static String notification(String userID, String content) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content.getBytes("UTF-8"));
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
 			URLConnection urlConnection = url.openConnection();
 			
 			

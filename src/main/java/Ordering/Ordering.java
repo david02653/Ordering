@@ -11,6 +11,9 @@ import java.net.URLEncoder;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
@@ -21,7 +24,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import static com.mongodb.client.model.Filters.*;
-
+@Component
 public class Ordering {
 	
 	public static String newMovieOrdering(String moviesID) {
@@ -144,36 +147,7 @@ public class Ordering {
 		return result;
 	}
 	
-	public static String notification(String userID, String content) {
-		String result = "";
-		
-		
-		try {
-			
-			
-			URL url = new URL(URLEncoder.encode("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content, "UTF-8"));
-			URLConnection urlConnection = url.openConnection();
-			
-			result = url.toString();
-			
-			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
-			String current = "";
-			while((current = in.readLine()) != null)
-	         {
-				result += current;
-	         }
-			
-			
-			
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
-		return result;
-	}
-	
-	public static String getMovieByOrderList(String userID) {
+	public static String getMovieFromOrderList(String userID) {
 		try {  
 		            
 			System.out.println("MongoDBConnect to database begin");
@@ -204,7 +178,7 @@ public class Ordering {
 	}
 	
 	
-	public static String getGroceryByOrderList(String userID) {
+	public static String getGroceryFromOrderList(String userID) {
 		try {  
 		            
 			System.out.println("MongoDBConnect to database begin");
@@ -232,6 +206,37 @@ public class Ordering {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             return "{}";
         }
+	}
+	
+	
+	public static String notification(String userID, String content) {
+		String result = "";
+		
+		Logger logger = LoggerFactory.getLogger(Ordering.class);
+		
+		
+		
+		try {
+			
+			
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			URLConnection urlConnection = url.openConnection();
+			
+			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
+			String current = "";
+			while((current = in.readLine()) != null)
+	         {
+				result += current;
+	         }
+			
+			
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		return result;
 	}
 	
 	

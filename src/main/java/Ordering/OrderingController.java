@@ -42,18 +42,18 @@ public class OrderingController {
     }
 	
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "getMovieByOrderList", method = RequestMethod.GET)
-    public String getMovieByOrderList(@RequestParam("userID") String userID)
+	@RequestMapping(value = "getMovieFromOrderList", method = RequestMethod.GET)
+    public String getMovieFromOrderList(@RequestParam("userID") String userID)
     {
-    	return Ordering.getMovieByOrderList(userID);
+    	return Ordering.getMovieFromOrderList(userID);
     }
 	
 	
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "getGroceryByOrderList", method = RequestMethod.GET)
-    public String getGroceryByOrderList(@RequestParam("userID") String userID)
+	@RequestMapping(value = "getGroceryFromOrderList", method = RequestMethod.GET)
+    public String getGroceryFromOrderList(@RequestParam("userID") String userID)
     {
-    	return Ordering.getGroceryByOrderList(userID);
+    	return Ordering.getGroceryFromOrderList(userID);
     }
 	
 }

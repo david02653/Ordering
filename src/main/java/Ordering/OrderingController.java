@@ -2,6 +2,20 @@ package Ordering;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+
+import static com.mongodb.client.model.Filters.eq;
+
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+
+import org.bson.Document;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,7 +52,15 @@ public class OrderingController {
 	@RequestMapping(value = "notification", method = RequestMethod.GET)
     public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
     {
-    	return Ordering.notification(userID, content);
+		try {  
+            
+			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
+            
+        } catch (Exception e) {  
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            return "{}";
+        }
+    	
     }
 	
 	@CrossOrigin(origins = "*")

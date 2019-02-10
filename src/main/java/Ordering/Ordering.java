@@ -211,39 +211,9 @@ public class Ordering {
 	
 	
 	public static String notification(String userID, String content) {
-		/*
+
 		String result = "";
 		
-		//Logger logger = LoggerFactory.getLogger(Ordering.class);
-		
-		
-		
-		try {
-			
-			String originUrl = "http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content;
-			String encodedURL = URLEncoder.encode(originUrl, "UTF-8");
-			
-			
-			URL url = new URL(encodedURL);
-			URLConnection urlConnection = url.openConnection();
-			
-			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
-			String current = "";
-			while((current = in.readLine()) != null)
-	         {
-				result += current;
-	         }
-			
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
-		*/
-		//------------------
-		
-		String result = "";
-		//這邊利用Jsoup爬蟲 直接拿到Notification的資料
 		try {
 			
 			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);

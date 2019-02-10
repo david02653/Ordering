@@ -53,7 +53,6 @@ public class OrderingController {
     public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
     {
 		try {  
-            
 			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
             
         } catch (Exception e) {  

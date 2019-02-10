@@ -245,7 +245,11 @@ public class Ordering {
 		String result = "";
 		//這邊利用Jsoup爬蟲 直接拿到Notification的資料
 		try {
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			String originUrl = "http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content;
+			String encodedURL = URLEncoder.encode(originUrl, "UTF-8");
+			
+			
+			URL url = new URL(encodedURL);
 			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
 			result = xmlDoc.select("body").get(0).text();
 		} catch (MalformedURLException e) {

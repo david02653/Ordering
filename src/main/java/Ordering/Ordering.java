@@ -62,9 +62,12 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering Movies Successfully.");
+    		//notification("1","OrderingMoviesSuccessfully.");
     		
-    		payment("1","250");
+    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content=OrderingMoviesSuccessfully");
+    		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
+    		
+    		//payment("1","250");
     		
     		
 			
@@ -110,9 +113,12 @@ public class Ordering {
     		
     		// checkout , write deadly
     		
-    		notification("1","Ordering Grocery successfully.");
+    		//notification("1","OrderingGrocerysuccessfully.");
     		
-    		payment("1","250");
+    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content=OrderingGrocerysuccessfully");
+    		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
+    		
+    		//payment("1","250");
     		
     		
     		

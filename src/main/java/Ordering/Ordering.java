@@ -11,6 +11,7 @@ import java.net.URLEncoder;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -210,9 +211,10 @@ public class Ordering {
 	
 	
 	public static String notification(String userID, String content) {
+		/*
 		String result = "";
 		
-		Logger logger = LoggerFactory.getLogger(Ordering.class);
+		//Logger logger = LoggerFactory.getLogger(Ordering.class);
 		
 		
 		
@@ -232,8 +234,20 @@ public class Ordering {
 				result += current;
 	         }
 			
-			
-			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		*/
+		//------------------
+		
+		String result = "";
+		//這邊利用Jsoup爬蟲 直接拿到Notification的資料
+		try {
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
+			result = xmlDoc.select("body").get(0).text();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

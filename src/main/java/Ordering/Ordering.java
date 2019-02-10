@@ -60,14 +60,12 @@ public class Ordering {
 	         // insert into collecion
     		collection.insertMany(documents);
     		
+    		
     		// checkout , write deadly
-    		
-    		//notification("1","OrderingMoviesSuccessfully.");
-    		
     		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Movies Successfully"));
     		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
     		
-    		//payment("1","250");
+    		payment("1","250");
     		
     		
 			
@@ -112,13 +110,10 @@ public class Ordering {
     		collection.insertMany(documents);
     		
     		// checkout , write deadly
-    		
-    		//notification("1","OrderingGrocerysuccessfully.");
-    		
-    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content=OrderingGrocerysuccessfully");
+    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Grocery successfully"));
     		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
     		
-    		//payment("1","250");
+    		payment("1","250");
     		
     		
     		

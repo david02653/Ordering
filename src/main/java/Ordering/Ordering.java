@@ -62,7 +62,7 @@ public class Ordering {
     		
     		
     		// checkout , write deadly
-    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Movies Successfully"));
+    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Movies Successfully","UTF-8"));
     		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
     		
     		payment("1","250");

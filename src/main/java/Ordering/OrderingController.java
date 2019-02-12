@@ -14,7 +14,6 @@ import static com.mongodb.client.model.Filters.eq;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.net.URLDecoder;
 
 import org.bson.Document;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -71,7 +70,7 @@ public class OrderingController {
     public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
     {
 		try {  
-			return Ordering.notification(userID, URLDecoder.decode(content, "UTF-8"));
+			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
             
         } catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

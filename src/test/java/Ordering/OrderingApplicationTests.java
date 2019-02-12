@@ -19,7 +19,7 @@ public class OrderingApplicationTests {
 	@Test
 	public void contextLoads() throws Exception{
 				
-		ordering.notification("1", "Ordering successfully");
+		ordering.notification("1", "Junit test");
 		
 	}
 

@@ -48,19 +48,6 @@ public class OrderingController {
     	return Ordering.newGroceryOrdering(groceryID, quantity);
     }
 	
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "notification", method = RequestMethod.GET)
-    public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
-    {
-		try {  
-			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
-            
-        } catch (Exception e) {  
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            return "{}";
-        }
-    	
-    }
 	
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "getMovieFromOrderList", method = RequestMethod.GET)
@@ -76,5 +63,29 @@ public class OrderingController {
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
+	
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "notification", method = RequestMethod.GET)
+    public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
+    {
+		try {  
+			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
+            
+        } catch (Exception e) {  
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            return "{}";
+        }
+    	
+    }
+	
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "payment", method = RequestMethod.GET)
+    public String payment(@RequestParam("userID") String userID, @RequestParam("price") String price)
+    {
+    	return Ordering.payment(userID, price);
+    }
+	
 	
 }

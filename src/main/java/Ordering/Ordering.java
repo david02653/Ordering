@@ -126,29 +126,6 @@ public class Ordering {
 	}
 	
 	
-	public static String payment(String userID, String price) {
-		String result = "";
-		try {
-			URL url = new URL("http://140.121.196.23:4106/Payment");
-			URLConnection urlConnection = url.openConnection();
-			
-			
-			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
-			String current = "";
-			while((current = in.readLine()) != null)
-	         {
-				result += current;
-	         }
-			
-			
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
-		return result;
-	}
-	
 	public static String getMovieFromOrderList(String userID) {
 		try {  
 		            
@@ -220,6 +197,30 @@ public class Ordering {
 			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
 			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
 			result = xmlDoc.select("body").get(0).text();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		return result;
+	}
+	
+	
+	public static String payment(String userID, String price) {
+		String result = "";
+		try {
+			URL url = new URL("http://140.121.196.23:4106/Payment");
+			URLConnection urlConnection = url.openConnection();
+			
+			
+			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
+			String current = "";
+			while((current = in.readLine()) != null)
+	         {
+				result += current;
+	         }
+			
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

@@ -62,9 +62,11 @@ public class Ordering {
     		
     		
     		// checkout , write deadly
+    		notification("1","Ordering Movies Successfully");
+    		/*
     		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Movies Successfully","UTF-8"));
     		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
-    		
+    		*/
     		payment("1","250");
     		
     		
@@ -194,7 +196,7 @@ public class Ordering {
 		
 		try {
 			
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + content);
+			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + URLEncoder.encode(content,"UTF-8"));
 			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
 			result = xmlDoc.select("body").get(0).text();
 		} catch (MalformedURLException e) {

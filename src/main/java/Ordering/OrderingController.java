@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiOperation;
 
 
 
-@Api(value = "OrderingController", tags = "與訂閱相關的電影與雜物都在這裡")
+@Api(value = "OrderingController", tags = "與購買相關的電影與雜物都在這裡")
 @RestController
 public class OrderingController {
 	@Autowired

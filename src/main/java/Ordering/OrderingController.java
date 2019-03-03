@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 
 
@@ -33,7 +34,7 @@ public class OrderingController {
 	@ApiOperation(value = "將購買電影加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
-    public String newMovieOrdering(@RequestParam("moviesID") String moviesID)
+    public String newMovieOrdering(@ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
     {
     	return Ordering.newMovieOrdering(moviesID);
     }
@@ -41,7 +42,7 @@ public class OrderingController {
 	@ApiOperation(value = "將購買的周邊商品加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.GET)
-    public String newGroceryOrdering(@RequestParam("groceryID") String groceryID, @RequestParam("quantity") String quantity)
+    public String newGroceryOrdering(@ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
     	return Ordering.newGroceryOrdering(groceryID, quantity);
     }
@@ -49,7 +50,7 @@ public class OrderingController {
 	@ApiOperation(value = "透過userID得到已購買電影的ID", notes = "回傳已購買電影ID")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "getMovieFromOrderList", method = RequestMethod.GET)
-    public String getMovieFromOrderList(@RequestParam("userID") String userID)
+    public String getMovieFromOrderList(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID)
     {
     	return Ordering.getMovieFromOrderList(userID);
     }
@@ -57,7 +58,7 @@ public class OrderingController {
 	@ApiOperation(value = "透過userID得到已購買周邊的ID", notes = "回傳已購買周邊ID")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "getGroceryFromOrderList", method = RequestMethod.GET)
-    public String getGroceryFromOrderList(@RequestParam("userID") String userID)
+    public String getGroceryFromOrderList(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID)
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
@@ -65,7 +66,7 @@ public class OrderingController {
 	@ApiOperation(value = "將訊息加入資料庫中", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "notification", method = RequestMethod.GET)
-    public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content)
+    public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
     {
 		try {  
 			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
@@ -80,7 +81,7 @@ public class OrderingController {
 	@ApiOperation(value = "結帳", notes = "成功結帳就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "payment", method = RequestMethod.GET)
-    public String payment(@RequestParam("userID") String userID, @RequestParam("price") String price)
+    public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
     	return Ordering.payment(userID, price);
     }

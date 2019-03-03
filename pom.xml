@@ -69,15 +69,27 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka-server -->
-		<!-- 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 			<version>1.4.6.RELEASE</version>
 		</dependency>
-		-->
 		
 	</dependencies>
+	
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-dependencies</artifactId>
+		    <version>Brixton.RELEASE</version>
+		    <type>pom</type>
+		    <scope>import</scope>
+		</dependency>
+	    </dependencies>
+	</dependencyManagement>
+	
 	
 	<build>
 		<plugins>

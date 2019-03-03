@@ -45,13 +45,13 @@ public class OrderingApplicationTests {
 	{
 		assertEquals( orderingController.newMovieOrdering("5c35ddffa3f01c41d8bb4192"), "success");
 	}
-	
+	/*
 	@Test
 	public void testNewGroceryOrdering() 
 	{
 		assertEquals( orderingController.newGroceryOrdering("5c49e70e212d8d18c0fccd59", "3"), "success");
 	}
-	
+	*/
 	@Test
 	public void testGetMovieFromOrderList() 
 	{

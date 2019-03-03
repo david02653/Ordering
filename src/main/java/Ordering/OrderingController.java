@@ -1,6 +1,7 @@
 package Ordering;
 
 import java.net.URLEncoder;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class OrderingController {
 	@Autowired
+	
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
 	@CrossOrigin(origins = "*")

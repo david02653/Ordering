@@ -8,15 +8,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.logging.*;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.jsoup.Jsoup;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -27,6 +29,8 @@ import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.*;
 @Component
 public class Ordering {
+	
+	private static Logger logger = Logger.getLogger(Ordering.class.getName());
 	
 	public static String newMovieOrdering(String moviesID) {
 		try {
@@ -63,17 +67,15 @@ public class Ordering {
     		
     		// checkout , write deadly
     		notification("1","Ordering Movies Successfully");
-    		/*
-    		URL url = new URL("http://140.121.196.23:4105/notification?userID=1&content="+ URLEncoder.encode("Ordering Movies Successfully","UTF-8"));
-    		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
-    		*/
+    		
     		payment("1","250");
-    		
-    		
 			
-	         return "Ordering success.";
+    		logger.info("function newMovieOrdering test successfully");
+    		
+	         return "success";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            logger.warning("function newMovieOrdering test unsuccessfully");
             return e.getClass().getName() + ": " + e.getMessage();
         }
 	}
@@ -117,12 +119,13 @@ public class Ordering {
     		
     		payment("1","250");
     		
+    		logger.info("function newGroceryOrdering test successfully");
     		
     		
-    		
-	         return "Ordering success.";
+	         return "success";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            logger.warning("function newGroceryOrdering test unsuccessfully");
             return e.getClass().getName() + ": " + e.getMessage();
         }
 	}
@@ -150,10 +153,14 @@ public class Ordering {
             }
             result += "]";
             System.out.println("Connect to database successfully");
+            
+            logger.info("function getMovieFromOrderList test successfully");
+            
             return result;
             
         } catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            logger.warning("function getMovieFromOrderList test unsuccessfully");
             return "{}";
         }
 	}
@@ -181,10 +188,14 @@ public class Ordering {
             }
             result += "]";
             System.out.println("Connect to database successfully");
+            
+            logger.info("function getGroceryFromOrderList test successfully");
+            
             return result;
             
         } catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            logger.warning("function getGroceryFromOrderList test unsuccessfully");
             return "{}";
         }
 	}
@@ -199,11 +210,17 @@ public class Ordering {
 			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + URLEncoder.encode(content,"UTF-8"));
 			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
 			result = xmlDoc.select("body").get(0).text();
+			
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
+			logger.warning("function notification test unsuccessfully");
 		} catch (IOException e) {
 			e.printStackTrace();
+			logger.warning("function notification test unsuccessfully");
 		} 
+		
+		logger.info("function notification test successfully");
 		return result;
 	}
 	
@@ -224,10 +241,15 @@ public class Ordering {
 			
 			
 		} catch (MalformedURLException e) {
+			logger.warning("function payment test unsuccessfully");
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warning("function payment test unsuccessfully");
 			e.printStackTrace();
 		} 
+		
+		logger.info("function payment test successfully");
+		
 		return result;
 	}
 	

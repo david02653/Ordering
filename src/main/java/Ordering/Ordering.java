@@ -207,7 +207,7 @@ public class Ordering {
 		
 		try {
 			
-			URL url = new URL("http://140.121.196.23:4102/newNotification?userID=" + userID + "&content=" + URLEncoder.encode(content,"UTF-8"));
+			URL url = new URL("http://140.121.196.23:4139/notification/newNotification?userID=" + userID + "&content=" + URLEncoder.encode(content,"UTF-8"));
 			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
 			result = xmlDoc.select("body").get(0).text();
 			
@@ -228,7 +228,7 @@ public class Ordering {
 	public static String payment(String userID, String price) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4106/Payment");
+			URL url = new URL("http://140.121.196.23:4139/payment");
 			URLConnection urlConnection = url.openConnection();
 			
 			

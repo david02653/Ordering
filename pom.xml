@@ -77,6 +77,11 @@
         	<groupId>org.springframework.cloud</groupId>
          	<artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
+        
+        <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>
 		
 	</dependencies>
 	
@@ -98,6 +103,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- Info page provids Build Information -->
+				<executions>
+			        <execution>
+			            <goals>
+			                <goal>build-info</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+			
+			<!-- Info page provids Git Information -->
+			<plugin>
+			    <groupId>pl.project13.maven</groupId>
+			    <artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

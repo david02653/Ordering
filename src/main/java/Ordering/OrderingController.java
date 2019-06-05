@@ -69,14 +69,16 @@ public class OrderingController {
 	@RequestMapping(value = "notification", method = RequestMethod.GET)
     public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
     {
-		try {  
-			//return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
-			return feignInterface.notification(userID, URLEncoder.encode(content, "UTF-8"));
-            
-        } catch (Exception e) {  
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            return "{}";
-        }
+		String result = "";
+		try {
+			
+			result = feignInterface.notification(userID, URLEncoder.encode(content, "UTF-8"));
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return result;
     	
     }
 	
@@ -86,7 +88,17 @@ public class OrderingController {
     public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
     	//return Ordering.payment(userID, price);
-		return feignInterface.payment();
+		
+		String result = "";
+		try {
+			
+			result = feignInterface.payment();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return result;
     }
 	
 	

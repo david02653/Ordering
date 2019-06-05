@@ -200,7 +200,7 @@ public class Ordering {
         }
 	}
 	
-	
+	// do not use
 	public static String notification(String userID, String content) {
 
 		String result = "";

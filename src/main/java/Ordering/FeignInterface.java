@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name="api-gateway")
 public interface FeignInterface {
 	
-	@RequestMapping(value = "notification", method = RequestMethod.GET)
+	@RequestMapping(value = "/notification/newNotification", method = RequestMethod.GET)
     public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content);
 	
 }

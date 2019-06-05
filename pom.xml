@@ -113,7 +113,7 @@
 			    </executions>
 			</plugin>
 			
-			<!-- Info page provids Git Information -->
+			<!-- Info page provides Git Information -->
 			<plugin>
 			    <groupId>pl.project13.maven</groupId>
 			    <artifactId>git-commit-id-plugin</artifactId>

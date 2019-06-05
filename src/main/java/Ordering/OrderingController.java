@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiParam;
 @RestController
 public class OrderingController {
 	@Autowired
+	FeignInterface feignInterface;
 	
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
@@ -69,7 +70,8 @@ public class OrderingController {
     public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
     {
 		try {  
-			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
+			//return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
+			return feignInterface.notification(userID, URLEncoder.encode(content, "UTF-8"));
             
         } catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

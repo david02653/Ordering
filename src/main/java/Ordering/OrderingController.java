@@ -1,19 +1,12 @@
 package Ordering;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.logging.Logger;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URLEncoder;
 
 
 
@@ -99,8 +92,8 @@ public class OrderingController {
 	@RequestMapping(value = "payment", method = RequestMethod.GET)
     public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
-    	//return Ordering.payment(userID, price);
-		
+    	return Ordering.payment(userID, price);
+		/*
 		String result = "";
 		try {
 			
@@ -109,8 +102,8 @@ public class OrderingController {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
-		return result;
+		}
+		return result;*/
     }
 	
 	

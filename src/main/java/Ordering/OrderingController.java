@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 
@@ -63,7 +64,7 @@ public class OrderingController {
 	@RequestMapping(value = "notification", method = RequestMethod.GET)
     public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
     {
-		/*
+		
 		try {
 			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
@@ -71,9 +72,9 @@ public class OrderingController {
 		}
 		
 		return "{}";
-		*/
+
 		
-		
+		/*
 		String result = "";
 		try {
 			
@@ -84,7 +85,7 @@ public class OrderingController {
 			e.printStackTrace();
 		} 
 		return result;
-    	
+    	*/
     }
 	
 	@ApiOperation(value = "結帳", notes = "成功結帳就回傳success")

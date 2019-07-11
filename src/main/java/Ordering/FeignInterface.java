@@ -11,7 +11,7 @@ public interface FeignInterface {
 	@RequestMapping(value = "/notification/newNotification", method = RequestMethod.GET)
     public String notification(@RequestParam("userID") String userID, @RequestParam("content") String content);
 	
-	@RequestMapping(value = "/payment", method = RequestMethod.GET)
+	@RequestMapping(value = "/payment/payment", method = RequestMethod.GET)
     public String payment();
 
 	/*

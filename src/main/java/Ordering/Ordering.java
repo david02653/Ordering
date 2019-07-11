@@ -1,6 +1,10 @@
 package Ordering;
 
-import java.util.ArrayList;
+import com.mongodb.client.*;
+import org.bson.Document;
+import org.jsoup.Jsoup;
+import org.springframework.stereotype.Component;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,25 +12,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.logging.*;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
-import org.bson.Document;
-import org.bson.types.ObjectId;
-import org.jsoup.Jsoup;
+import static com.mongodb.client.model.Filters.eq;
+
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.MongoDatabase;
-
-import static com.mongodb.client.model.Filters.*;
 @Component
 public class Ordering {
 	
@@ -228,7 +220,7 @@ public class Ordering {
 	public static String payment(String userID, String price) {
 		String result = "";
 		try {
-			URL url = new URL("http://140.121.196.23:4139/payment");
+			URL url = new URL("http://140.121.196.23:4139/payment/payment");
 			URLConnection urlConnection = url.openConnection();
 			
 			

@@ -94,9 +94,10 @@ public class OrderingController {
 	@RequestMapping(value = "payment", method = RequestMethod.GET)
     public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
-    	return Ordering.payment(userID, price);
-/*
+    	//return Ordering.payment(userID, price);
+
 		String result = "";
+		String temp = Ordering.payment(userID, price);
 		try {
 			
 			result = feignInterface.payment();
@@ -106,7 +107,7 @@ public class OrderingController {
 			e.printStackTrace();
 		}
 		return result;
-*/
+
     }
 	
 	

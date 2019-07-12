@@ -68,7 +68,7 @@ public class OrderingApplicationTests {
 	@Test
 	public void testPayment() 
 	{
-		assertEquals( orderingController.payment2("1", "100"), "success");
+		assertEquals( orderingController.payment("1", "100"), "success");
 	}
 	
 	

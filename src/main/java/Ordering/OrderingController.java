@@ -109,23 +109,6 @@ public class OrderingController {
 		return result;
 
     }
-
-	public String payment2(String userID, String price)
-	{
-//    	return Ordering.payment(userID, price);
-
-		String result = "";
-		try {
-
-			result = paymentInterface.payment();
-
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-
-	}
 	
 	
 }

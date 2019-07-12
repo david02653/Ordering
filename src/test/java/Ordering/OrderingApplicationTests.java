@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -27,6 +28,7 @@ public class OrderingApplicationTests {
 //
 ////	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
 ////	OrderingController orderingController = (OrderingController)applicationContext.getBean("orderingController");
+	@Autowired
 	OrderingController orderingController;
 
 	@Test

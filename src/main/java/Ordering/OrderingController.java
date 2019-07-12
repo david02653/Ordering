@@ -97,7 +97,6 @@ public class OrderingController {
     	//return Ordering.payment(userID, price);
 
 		String result = "";
-		String temp = Ordering.payment(userID, price);
 		try {
 			
 			result = feignInterface.payment();

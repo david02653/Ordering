@@ -11,8 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Test;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -25,7 +25,7 @@ import static org.junit.Assert.assertTrue;
 //@WebAppConfiguration
 public class OrderingApplicationTests {
 
-	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+	ApplicationContext applicationContext = SpringApplication.run(OrderingApplication.class);
 
 	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
 	

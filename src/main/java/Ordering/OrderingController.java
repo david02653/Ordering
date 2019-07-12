@@ -99,7 +99,7 @@ public class OrderingController {
 		String result = "";
 		try {
 			
-			result = feignInterface.payment(userID);
+			result = feignInterface.payment();
 			
 			
 		} catch (Exception e) {

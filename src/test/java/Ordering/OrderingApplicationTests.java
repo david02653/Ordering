@@ -11,8 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Test;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -25,11 +23,12 @@ import static org.junit.Assert.assertTrue;
 //@WebAppConfiguration
 public class OrderingApplicationTests {
 
-	ApplicationContext applicationContext = SpringApplication.run(OrderingApplication.class);
+//	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//
+////	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
+////	OrderingController orderingController = (OrderingController)applicationContext.getBean("orderingController");
+	OrderingController orderingController;
 
-	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
-	
-	
 	@Test
 	public void testIndex() 
 	{

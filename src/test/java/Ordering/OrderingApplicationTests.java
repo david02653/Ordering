@@ -11,7 +11,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -19,15 +22,10 @@ import static org.junit.Assert.assertTrue;
 
 //Ctrl+Shift+O 可以自動導入需要的包
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringBootTest(classes = OrderingApplication.class)
-//@WebAppConfiguration
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class OrderingApplicationTests {
 
-//	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-//
-////	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
-////	OrderingController orderingController = (OrderingController)applicationContext.getBean("orderingController");
 	@Autowired
 	OrderingController orderingController;
 
@@ -70,7 +68,7 @@ public class OrderingApplicationTests {
 	@Test
 	public void testPayment() 
 	{
-		assertEquals( orderingController.payment("1", "100"), "success");
+		assertEquals( orderingController.payment2("1", "100"), "success");
 	}
 	
 	

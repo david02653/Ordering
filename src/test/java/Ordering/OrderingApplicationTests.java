@@ -11,7 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -24,8 +25,9 @@ import static org.junit.Assert.assertTrue;
 //@WebAppConfiguration
 public class OrderingApplicationTests {
 
-	@Autowired
-	OrderingController orderingController = new OrderingController();
+	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+	OrderingController orderingController = applicationContext.getBean(OrderingController.class);
 	
 	
 	@Test

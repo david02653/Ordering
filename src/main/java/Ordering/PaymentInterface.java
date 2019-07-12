@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(name = "payment")
-public interface FeignInterface {
+public interface PaymentInterface {
 
 //	@RequestMapping(value = "/notification/newNotification", method = RequestMethod.GET)
 //    String notification(@RequestParam("userID") String userID, @RequestParam("content") String content);
 
-	@RequestMapping(value = "/payment", method = RequestMethod.GET)
+    @RequestMapping(value = "/payment", method = RequestMethod.GET)
     String payment();
 
 

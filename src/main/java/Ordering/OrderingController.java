@@ -15,8 +15,9 @@ import java.net.URLEncoder;
 @Api(value = "OrderingController", tags = "與購買相關的電影與雜物都在這裡")
 @RestController
 public class OrderingController {
+
 	@Autowired
-	FeignInterface feignInterface;
+	PaymentInterface paymentInterface;
 	
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
@@ -88,20 +89,20 @@ public class OrderingController {
 
 */
     }
-	
+
 	@ApiOperation(value = "結帳", notes = "成功結帳就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "payment", method = RequestMethod.GET)
     public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
-    	//return Ordering.payment(userID, price);
+//    	return Ordering.payment(userID, price);
 
 		String result = "";
 		try {
-			
-			result = feignInterface.payment();
-			
-			
+
+			result = paymentInterface.payment();
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

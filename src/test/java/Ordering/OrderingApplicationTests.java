@@ -1,25 +1,20 @@
 package Ordering;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.bson.Document;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.junit.*;
-import static org.junit.Assert.*;
-import java.util.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.junit.After;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 //Ctrl+Shift+O 可以自動導入需要的包
@@ -30,8 +25,8 @@ import com.mongodb.client.MongoDatabase;
 public class OrderingApplicationTests {
 
 	@Autowired
-	//Ordering ordering;
-	OrderingController orderingController = new OrderingController();
+
+	OrderingController orderingController;
 	
 	
 	@Test

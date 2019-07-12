@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 public class OrderingApplicationTests {
 
 	@Autowired
-
 	OrderingController orderingController;
 	
 	

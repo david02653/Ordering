@@ -81,54 +81,5 @@ public class OrderingController {
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
-
-    /*
-	@ApiOperation(value = "將訊息加入資料庫中", notes = "成功加入資料庫就回傳success")
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "notification", method = RequestMethod.GET)
-    public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
-    {
-
-//		try {
-//			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
-//		} catch (UnsupportedEncodingException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return "{}";
-
-		String result = "";
-		try {
-			
-			result = notificationInterface.newNotification(userID, URLEncoder.encode(content, "UTF-8"));
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-		return result;
-
-    }
-
-	@ApiOperation(value = "結帳", notes = "成功結帳就回傳success")
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "payment", method = RequestMethod.GET)
-    public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
-    {
-//    	return ordering.payment(userID, price);
-
-		String result = "";
-		try {
-
-			result = paymentInterface.payment();
-
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-
-    }
-	*/
 	
 }

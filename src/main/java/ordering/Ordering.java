@@ -167,60 +167,6 @@ public class Ordering {
         }
 	}
 	
-	/*
-	public static String notification(String userID, String content) {
-
-		String result = "";
-		
-		try {
-			
-			URL url = new URL("http://140.121.196.23:4139/notification/newNotification?userID=" + userID + "&content=" + URLEncoder.encode(content,"UTF-8"));
-			org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
-			result = xmlDoc.select("body").get(0).text();
-			
-			
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			logger.warning("function notification test unsuccessfully");
-		} catch (IOException e) {
-			e.printStackTrace();
-			logger.warning("function notification test unsuccessfully");
-		} 
-		
-		logger.info("function notification test successfully");
-		return result;
-	}
-	
-	
-	public static String payment(String userID, String price) {
-		String result = "";
-		try {
-			URL url = new URL("http://140.121.196.23:4139/payment/payment");
-			URLConnection urlConnection = url.openConnection();
-			
-			
-			BufferedReader in = new BufferedReader( new InputStreamReader(urlConnection.getInputStream()) );
-			String current = "";
-			while((current = in.readLine()) != null)
-	         {
-				result += current;
-	         }
-			
-			
-		} catch (MalformedURLException e) {
-			logger.warning("function payment test unsuccessfully");
-			e.printStackTrace();
-		} catch (IOException e) {
-			logger.warning("function payment test unsuccessfully");
-			e.printStackTrace();
-		} 
-		
-		logger.info("function payment test successfully");
-		
-		return result;
-	}
-	*/
-	
 
 }
 

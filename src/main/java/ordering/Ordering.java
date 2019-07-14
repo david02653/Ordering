@@ -1,17 +1,9 @@
-package Ordering;
+package ordering;
 
 import com.mongodb.client.*;
 import org.bson.Document;
-import org.jsoup.Jsoup;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -55,15 +47,7 @@ public class Ordering {
 
 	         // insert into collecion
     		collection.insertMany(documents);
-    		
-    		
-    		// checkout , write deadly
-    		notification("1","Ordering Movies Successfully");
-    		
-    		payment("1","250");
-			
-    		logger.info("function newMovieOrdering test successfully");
-    		
+
 	         return "success";
 		} catch (Exception e) {  
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -104,15 +88,6 @@ public class Ordering {
 
 	         // insert into collecion
     		collection.insertMany(documents);
-    		
-    		// checkout , write deadly
-    		URL url = new URL("http://140.121.196.23:4139/ordering/notification?userID=1&content="+ URLEncoder.encode("Ordering Grocery successfully","UTF-8"));
-    		org.jsoup.nodes.Document xmlDoc =  Jsoup.parse(url, 3000); //使用Jsoup jar 去解析網頁
-    		
-    		payment("1","250");
-    		
-    		logger.info("function newGroceryOrdering test successfully");
-    		
     		
 	         return "success";
 		} catch (Exception e) {  
@@ -192,7 +167,7 @@ public class Ordering {
         }
 	}
 	
-	// do not use
+	/*
 	public static String notification(String userID, String content) {
 
 		String result = "";
@@ -244,7 +219,7 @@ public class Ordering {
 		
 		return result;
 	}
-	
+	*/
 	
 
 }

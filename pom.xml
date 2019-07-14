@@ -12,8 +12,8 @@
 	<groupId>Ordering</groupId>
 	<artifactId>Ordering</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Ordering</name>
-	<description>Ordering</description>
+	<name>ordering</name>
+	<description>ordering</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -1,12 +1,13 @@
-package Ordering;
+package ordering;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import ordering.feign.NotificationInterface;
+import ordering.feign.PaymentInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 
@@ -18,6 +19,9 @@ public class OrderingController {
 
 	@Autowired
 	PaymentInterface paymentInterface;
+
+	@Autowired
+	NotificationInterface notificationInterface;
 	
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
@@ -33,7 +37,16 @@ public class OrderingController {
 	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
     public String newMovieOrdering(@ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
     {
-    	return Ordering.newMovieOrdering(moviesID);
+		try {
+			if ((Ordering.newMovieOrdering(moviesID)).equals("success"))
+				if ((paymentInterface.payment("1", "250")).equals("success"))
+					if ((notificationInterface.newNotification("1", URLEncoder.encode("ordering Movies Successfully", "UTF-8"))).equals("success"))
+						return "success";
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return "fail";
     }
 	
 	@ApiOperation(value = "將購買的周邊商品加入資料庫", notes = "成功加入資料庫就回傳success")
@@ -41,7 +54,16 @@ public class OrderingController {
 	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.GET)
     public String newGroceryOrdering(@ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
-    	return Ordering.newGroceryOrdering(groceryID, quantity);
+		try {
+			if ((Ordering.newGroceryOrdering(groceryID, quantity)).equals("success"))
+				if ((paymentInterface.payment("1", "250")).equals("success"))
+					if ((notificationInterface.newNotification("1", URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success"))
+						return "success";
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return "fail";
     }
 	
 	@ApiOperation(value = "透過userID得到已購買電影的ID", notes = "回傳已購買電影ID")
@@ -59,27 +81,26 @@ public class OrderingController {
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
-	
+
+    /*
 	@ApiOperation(value = "將訊息加入資料庫中", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "notification", method = RequestMethod.GET)
     public String notification(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "content", value = "訊息內容")@RequestParam("content") String content)
     {
 
-		try {
-			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			return Ordering.notification(userID, URLEncoder.encode(content, "UTF-8"));
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+//
+//		return "{}";
 
-		return "{}";
-
-		
-/*
 		String result = "";
 		try {
 			
-			result = feignInterface.notification(userID, URLEncoder.encode(content, "UTF-8"));
+			result = notificationInterface.newNotification(userID, URLEncoder.encode(content, "UTF-8"));
 			
 			
 		} catch (Exception e) {
@@ -87,7 +108,6 @@ public class OrderingController {
 		} 
 		return result;
 
-*/
     }
 
 	@ApiOperation(value = "結帳", notes = "成功結帳就回傳success")
@@ -95,7 +115,7 @@ public class OrderingController {
 	@RequestMapping(value = "payment", method = RequestMethod.GET)
     public String payment(@ApiParam(required = true, name = "userID", value = "使用者ID")@RequestParam("userID") String userID, @ApiParam(required = true, name = "price", value = "價錢")@RequestParam("price") String price)
     {
-//    	return Ordering.payment(userID, price);
+//    	return ordering.payment(userID, price);
 
 		String result = "";
 		try {
@@ -109,6 +129,6 @@ public class OrderingController {
 		return result;
 
     }
-	
+	*/
 	
 }

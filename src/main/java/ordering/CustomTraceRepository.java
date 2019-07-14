@@ -1,4 +1,4 @@
-package Ordering;
+package ordering;
 
 import java.util.Map;
 import java.util.logging.Logger;

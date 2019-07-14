@@ -59,18 +59,6 @@ public class OrderingApplicationTests {
 		assertTrue( isJSONValid(orderingController.getGroceryFromOrderList("1")) );
 	}
 	
-	@Test
-	public void testNotification() 
-	{
-		assertEquals( orderingController.notification("1", "Junit test"), "success");
-	}
-	
-	@Test
-	public void testPayment() 
-	{
-		assertEquals( orderingController.payment("1", "100"), "success");
-	}
-	
 	
 	@After
 	public void clearTest() {

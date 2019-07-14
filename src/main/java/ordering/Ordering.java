@@ -15,19 +15,16 @@ import static com.mongodb.client.model.Filters.eq;
 public class Ordering {
 	
 	private static Logger logger = Logger.getLogger(Ordering.class.getName());
+
+	private final String dbURL = "mongodb://cinema:cinema@140.121.196.23:4115";
+	private final String dbName = "OrderingList";
+	private final String collectionName = "orderingList";
 	
-	public static String newMovieOrdering(String moviesID) {
+	public String newMovieOrdering(String moviesID) {
 		try {
-			
-			
-			System.out.println("MongoDBConnect to database orderinglist begin");
-			
-			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
-			
-			 MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
-	         System.out.println("MongoDBConnect to database successfully");
+
 	         
-	         MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+	         MongoCollection<Document> collection = mongodbGetCollection();
 	         
 	         
 	         ArrayList<Document> documents = new ArrayList<Document>();
@@ -56,18 +53,10 @@ public class Ordering {
         }
 	}
 	
-	public static String newGroceryOrdering(String groceryID, String quantity) {
+	public String newGroceryOrdering(String groceryID, String quantity) {
 		try {
-			
-			
-			System.out.println("MongoDBConnect to database orderinglist begin");
-			
-			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
-			
-			 MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
-	         System.out.println("MongoDBConnect to database successfully");
 	         
-	         MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+	         MongoCollection<Document> collection = mongodbGetCollection();
 	         
 	         
 	         ArrayList<Document> documents = new ArrayList<Document>();
@@ -98,18 +87,13 @@ public class Ordering {
 	}
 	
 	
-	public static String getMovieFromOrderList(String userID) {
-		try {  
-		            
-			System.out.println("MongoDBConnect to database begin");
-			
-            MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
-            
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
-            System.out.println("MongoDBConnect to database successfully");
+	public String getMovieFromOrderList(String userID) {
+		try {
+
+			MongoCollection<Document> collection = mongodbGetCollection();
 
             String result = "[";
-            MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+
             FindIterable<Document> fi = collection.find(eq("Category","Movie"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
@@ -133,18 +117,13 @@ public class Ordering {
 	}
 	
 	
-	public static String getGroceryFromOrderList(String userID) {
-		try {  
-		            
-			System.out.println("MongoDBConnect to database begin");
-			
-            MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
-            
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
-            System.out.println("MongoDBConnect to database successfully");
+	public String getGroceryFromOrderList(String userID) {
+		try {
+
+			MongoCollection<Document> collection = mongodbGetCollection();
 
             String result = "[";
-            MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+
             FindIterable<Document> fi = collection.find(eq("Category","Grocery"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
@@ -165,6 +144,35 @@ public class Ordering {
             logger.warning("function getGroceryFromOrderList test unsuccessfully");
             return "{}";
         }
+	}
+
+	public MongoCollection<Document> mongodbGetCollection() {
+		try {
+
+			System.out.println("MongoDBConnect to database begin");
+			logger.info("MongoDBConnect to database begin");
+
+			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
+
+			MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
+			System.out.println("MongoDBConnect to database successfully");
+			logger.info("MongoDBConnect to database successfully");
+
+			MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+
+			if( collection != null){
+				System.out.println("Get collection successfully");
+				logger.info("Get collection successfully");
+			}
+
+
+			return collection;
+
+		} catch (Exception e) {
+			System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+		}
+
+		return null;
 	}
 	
 

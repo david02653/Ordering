@@ -16,11 +16,11 @@ public class Ordering {
 	
 	private static Logger logger = Logger.getLogger(Ordering.class.getName());
 
-	private final String dbURL = "mongodb://cinema:cinema@140.121.196.23:4115";
-	private final String dbName = "OrderingList";
-	private final String collectionName = "orderingList";
+	private static final String dbURL = "mongodb://cinema:cinema@140.121.196.23:4115";
+	private static final String dbName = "OrderingList";
+	private static final String collectionName = "orderingList";
 	
-	public String newMovieOrdering(String moviesID) {
+	public static String newMovieOrdering(String moviesID) {
 		try {
 
 	         
@@ -53,7 +53,7 @@ public class Ordering {
         }
 	}
 	
-	public String newGroceryOrdering(String groceryID, String quantity) {
+	public static String newGroceryOrdering(String groceryID, String quantity) {
 		try {
 	         
 	         MongoCollection<Document> collection = mongodbGetCollection();
@@ -87,7 +87,7 @@ public class Ordering {
 	}
 	
 	
-	public String getMovieFromOrderList(String userID) {
+	public static String getMovieFromOrderList(String userID) {
 		try {
 
 			MongoCollection<Document> collection = mongodbGetCollection();
@@ -115,9 +115,9 @@ public class Ordering {
             return "{}";
         }
 	}
-	
-	
-	public String getGroceryFromOrderList(String userID) {
+
+
+	public static String getGroceryFromOrderList(String userID) {
 		try {
 
 			MongoCollection<Document> collection = mongodbGetCollection();
@@ -146,19 +146,19 @@ public class Ordering {
         }
 	}
 
-	public MongoCollection<Document> mongodbGetCollection() {
+	public static MongoCollection<Document> mongodbGetCollection() {
 		try {
 
 			System.out.println("MongoDBConnect to database begin");
 			logger.info("MongoDBConnect to database begin");
 
-			MongoClient mongoClient = MongoClients.create("mongodb://cinema:cinema@140.121.196.23:4115");
+			MongoClient mongoClient = MongoClients.create(dbURL);
 
-			MongoDatabase mongoDatabase = mongoClient.getDatabase("OrderingList");
+			MongoDatabase mongoDatabase = mongoClient.getDatabase(dbName);
 			System.out.println("MongoDBConnect to database successfully");
 			logger.info("MongoDBConnect to database successfully");
 
-			MongoCollection<Document> collection = mongoDatabase.getCollection("orderingList");
+			MongoCollection<Document> collection = mongoDatabase.getCollection(collectionName);
 
 			if( collection != null){
 				System.out.println("Get collection successfully");

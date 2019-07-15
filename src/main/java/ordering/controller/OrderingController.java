@@ -1,8 +1,9 @@
-package ordering;
+package ordering.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import ordering.Ordering;
 import ordering.feign.NotificationInterface;
 import ordering.feign.PaymentInterface;
 import org.springframework.beans.factory.annotation.Autowired;

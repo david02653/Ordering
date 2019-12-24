@@ -27,8 +27,11 @@ public class OrderingController {
 	@Autowired
 	NotificationInterface notificationInterface;
 
-/*	@RequestMapping(value="/pact", method = RequestMethod.GET)
-	public String test2() { return "tom";}*/
+
+	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
+	public String isNumberPrime(@RequestParam("number") Integer number) {
+		return number % 2 == 0 ? "Even" : "Odd";
+	}
 
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")

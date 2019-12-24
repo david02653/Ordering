@@ -17,7 +17,7 @@ import ordering.controller.OrderingController;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @DirtiesContext
 @AutoConfigureMessageVerifier
-public class BaseTestClass {
+public class ProviderRoleBaseTestClass {
     @Autowired
     private OrderingController orderingController;
 

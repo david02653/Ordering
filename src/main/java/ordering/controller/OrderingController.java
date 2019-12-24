@@ -123,5 +123,20 @@ public class OrderingController {
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
+
+
+	@RequestMapping(value="/payment", method = RequestMethod.GET)
+	public String payment(@RequestParam("userID") String userID, @RequestParam("price") String price) {
+
+		String result = "";
+
+		try {
+			result = paymentInterface.payment("1", "250");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 }

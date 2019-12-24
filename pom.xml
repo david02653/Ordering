@@ -142,9 +142,29 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spring Cloud Contract Provider -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Cloud Contract Consumer -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-contract-wiremock</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-contract-stub-runner</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- location of stub.jar -->
+		<dependency>
+			<groupId>Payment</groupId>
+			<artifactId>payment</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -222,7 +242,7 @@
 				<version>1.2.2.RELEASE</version>
 				<extensions>true</extensions>
 				<configuration>
-					<baseClassForTests>ordering.BaseTestClass</baseClassForTests>
+					<baseClassForTests>ordering.ProviderRoleBaseTestClass</baseClassForTests>
 				</configuration>
 			</plugin>
 

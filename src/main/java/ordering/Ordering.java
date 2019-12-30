@@ -36,8 +36,8 @@ public class Ordering {
 	         // insert into documents
 	         for(int i = 0; i < moviesIDArr.length; i++) {
 		         Document doc = new Document("ObjectID", moviesIDArr[i])
-		        		    .append("Category", "Movie")
-		        		    .append("Quantity", 0);
+		        		    .append("category", "Movie")
+		        		    .append("quantity", 0);
 		         
 		         documents.add(doc);
 	         }
@@ -69,8 +69,8 @@ public class Ordering {
 	         // insert into documents
 	         for(int i = 0; i < groceryIDArr.length; i++) {
 		         Document doc = new Document("ObjectID", groceryIDArr[i])
-		        		    .append("Category", "Grocery")
-		        		    .append("Quantity", quantityArr[i]);
+		        		    .append("category", "Grocery")
+		        		    .append("quantity", quantityArr[i]);
 		         
 		         documents.add(doc);
 	         }
@@ -94,7 +94,7 @@ public class Ordering {
 
             String result = "[";
 
-            FindIterable<Document> fi = collection.find(eq("Category","Movie"));
+            FindIterable<Document> fi = collection.find(eq("category","Movie"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
             {
@@ -124,7 +124,7 @@ public class Ordering {
 
             String result = "[";
 
-            FindIterable<Document> fi = collection.find(eq("Category","Grocery"));
+            FindIterable<Document> fi = collection.find(eq("category","Grocery"));
             MongoCursor<Document> cursor = fi.iterator();
             while(cursor.hasNext()) 
             {

@@ -35,7 +35,7 @@ public class Ordering {
 	         
 	         // insert into documents
 	         for(int i = 0; i < moviesIDArr.length; i++) {
-		         Document doc = new Document("ObjectID", moviesIDArr[i])
+		         Document doc = new Document("objectid", moviesIDArr[i])
 		        		    .append("category", "Movie")
 		        		    .append("quantity", 0);
 		         
@@ -68,7 +68,7 @@ public class Ordering {
 	         
 	         // insert into documents
 	         for(int i = 0; i < groceryIDArr.length; i++) {
-		         Document doc = new Document("ObjectID", groceryIDArr[i])
+		         Document doc = new Document("objectid", groceryIDArr[i])
 		        		    .append("category", "Grocery")
 		        		    .append("quantity", quantityArr[i]);
 		         

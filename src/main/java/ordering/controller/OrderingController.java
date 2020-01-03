@@ -9,6 +9,7 @@ import ordering.Ordering;
 import ordering.feign.NotificationInterface;
 import ordering.feign.PaymentInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,13 @@ public class OrderingController {
 	@Autowired
 	NotificationInterface notificationInterface;
 
+
+	@Value("${server.port}")
+	String port;
+	@RequestMapping("/hi")
+	public String home(@RequestParam("name") String name) {
+		return "hi " + name + ", I am from port: " + port;
+	}
 
 	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
 	public String isNumberPrime(@RequestParam("number") Integer number) {

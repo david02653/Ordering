@@ -31,7 +31,7 @@ public class OrderingController {
 
 	@Value("${server.port}")
 	String port;
-	@RequestMapping("/hi")
+	@RequestMapping(value="/hi", method = RequestMethod.GET)
 	public String home(@RequestParam("name") String name) {
 		return "hi " + name + ", I am from port: " + port;
 	}
@@ -39,6 +39,11 @@ public class OrderingController {
 	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
 	public String isNumberPrime(@RequestParam("number") Integer number) {
 		return number % 2 == 0 ? "Even" : "Odd";
+	}
+
+	@RequestMapping(value="/simulateError", method = RequestMethod.GET)
+	public String isNumberPrimeFromPayment(@RequestParam("number") Integer number) {
+		return paymentInterface.checkOddAndEvenFromPayment(number);
 	}
 
 	

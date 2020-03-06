@@ -2,6 +2,7 @@
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/feign/NotificationInterface.java
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/CustomTraceRepository.java
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/OrderingApplication.java
+/home/water7878778/Desktop/Ordering/src/main/java/ordering/sleuth/HttpResponseInjectingTraceFilter.java
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/SwaggerConfig.java
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/Ordering.java
 /home/water7878778/Desktop/Ordering/src/main/java/ordering/controller/OrderingController.java

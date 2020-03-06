@@ -1,3 +1,4 @@
+ordering/sleuth/HttpResponseInjectingTraceFilter.class
 ordering/SwaggerConfig.class
 ordering/Ordering.class
 ordering/OrderingApplication.class

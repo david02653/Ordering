@@ -1,5 +1,5 @@
 {
-  "id" : "15abe8cb-8f7c-4c36-b44d-c64664332e40",
+  "id" : "18853b1d-d75e-473f-a382-d57e00d71f33",
   "request" : {
     "urlPath" : "/validate/prime-number",
     "method" : "GET",
@@ -14,5 +14,5 @@
     "body" : "Even",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "15abe8cb-8f7c-4c36-b44d-c64664332e40"
+  "uuid" : "18853b1d-d75e-473f-a382-d57e00d71f33"
 }

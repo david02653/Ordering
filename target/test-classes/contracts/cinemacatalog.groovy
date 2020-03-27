@@ -2,7 +2,8 @@ package contracts
 
 import org.springframework.cloud.contract.spec.Contract
 Contract.make {
-    description "should return even when number input is even"
+    description "cinemacatalog contract"
+    name("cinemacatalog_validate_primeNumber")
     request {
         method GET()
         url("/validate/prime-number") {
@@ -16,3 +17,6 @@ Contract.make {
         status 200
     }
 }
+
+// 多個寫法
+// [Contract.make{}, Contract.make{}]

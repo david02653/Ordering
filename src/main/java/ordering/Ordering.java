@@ -2,10 +2,19 @@ package ordering;
 
 import com.mongodb.client.*;
 import org.bson.Document;
+import org.reflections.Reflections;
+import org.reflections.scanners.*;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.FilterBuilder;
 import org.springframework.stereotype.Component;
+import org.reflections.util.ConfigurationBuilder;
+
+import java.util.Set;
+import java.util.function.Predicate;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -173,6 +182,17 @@ public class Ordering {
 		}
 
 		return null;
+	}
+
+	public static void refl() {
+		//Reflections ref = new Reflections();
+		//Predicate<String> filter = new FilterBuilder().include(".*\\.groovy").include(".*\\.json");
+		//ref.save(System.getProperty("user.dir") + "/target/test-classes" + "/META-INF/reflections/testModel-reflections.xml");
+		//Set<String> resolved = ref.getResources(Pattern.compile(".*resource1-reflections\\.xml"));
+
+		String current = System.getProperty("user.dir");
+
+		System.out.println(current);
 	}
 	
 

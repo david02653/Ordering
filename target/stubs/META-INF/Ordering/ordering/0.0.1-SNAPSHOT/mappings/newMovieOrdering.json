@@ -1,0 +1,18 @@
+{
+  "id" : "ae164515-3d87-4d1e-870d-d26d31e5ffa1",
+  "request" : {
+    "urlPath" : "/newMovieOrdering",
+    "method" : "GET",
+    "queryParameters" : {
+      "moviesID" : {
+        "equalTo" : "5e0b10fa974ef74883b43403"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "success",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "ae164515-3d87-4d1e-870d-d26d31e5ffa1"
+}

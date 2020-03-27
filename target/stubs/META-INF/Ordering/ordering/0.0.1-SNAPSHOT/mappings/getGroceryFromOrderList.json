@@ -1,0 +1,17 @@
+{
+  "id" : "2deb9944-29e2-483f-816c-6afc5a45f8ac",
+  "request" : {
+    "urlPath" : "/getGroceryFromOrderList",
+    "method" : "GET",
+    "queryParameters" : {
+      "userID" : {
+        "equalTo" : "1"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "2deb9944-29e2-483f-816c-6afc5a45f8ac"
+}

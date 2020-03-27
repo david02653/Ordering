@@ -88,7 +88,7 @@ public class OrderingController {
 	@FeignRequests(value = {@FeignRequest(client = PaymentInterface.class, method = "payment", parameterTypes = {String.class, String.class}), @FeignRequest(client = NotificationInterface.class, method = "newNotification", parameterTypes = {String.class, String.class})})
 	@ApiOperation(value = "將購買電影加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.POST)
+	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
     public String newMovieOrdering(@ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
     {
 		try {
@@ -106,7 +106,7 @@ public class OrderingController {
     @FeignRequests(value = {@FeignRequest(client = PaymentInterface.class, method = "payment", parameterTypes = {String.class, String.class}), @FeignRequest(client = NotificationInterface.class, method = "newNotification", parameterTypes = {String.class, String.class})})
 	@ApiOperation(value = "將購買的周邊商品加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.POST)
+	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.GET)
     public String newGroceryOrdering(@ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
 		try {

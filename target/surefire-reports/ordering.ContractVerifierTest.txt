@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ordering.ContractVerifierTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.281 sec - in ordering.ContractVerifierTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.168 sec - in ordering.ContractVerifierTest

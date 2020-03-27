@@ -30,4 +30,67 @@ public class ContractVerifierTest extends ProviderRoleBaseTestClass {
 			assertThat(responseBody).isEqualTo("Even");
 	}
 
+	@Test
+	public void validate_newMovieOrdering() throws Exception {
+		// given:
+			MockMvcRequestSpecification request = given();
+
+		// when:
+			ResponseOptions response = given().spec(request)
+					.queryParam("moviesID","5e0b10fa974ef74883b43403")
+					.get("/newMovieOrdering");
+
+		// then:
+			assertThat(response.statusCode()).isEqualTo(200);
+		// and:
+			String responseBody = response.getBody().asString();
+			assertThat(responseBody).isEqualTo("success");
+	}
+
+	@Test
+	public void validate_newGroceryOrdering() throws Exception {
+		// given:
+			MockMvcRequestSpecification request = given();
+
+		// when:
+			ResponseOptions response = given().spec(request)
+					.queryParam("groceryID","5c49e70e212d8d18c0fccd55")
+					.queryParam("quantity","2")
+					.get("/newGroceryOrdering");
+
+		// then:
+			assertThat(response.statusCode()).isEqualTo(200);
+		// and:
+			String responseBody = response.getBody().asString();
+			assertThat(responseBody).isEqualTo("success");
+	}
+
+	@Test
+	public void validate_getMovieFromOrderList() throws Exception {
+		// given:
+			MockMvcRequestSpecification request = given();
+
+		// when:
+			ResponseOptions response = given().spec(request)
+					.queryParam("userID","1")
+					.get("/getMovieFromOrderList");
+
+		// then:
+			assertThat(response.statusCode()).isEqualTo(200);
+	}
+
+	@Test
+	public void validate_getGroceryFromOrderList() throws Exception {
+		// given:
+			MockMvcRequestSpecification request = given();
+
+		// when:
+			ResponseOptions response = given().spec(request)
+					.queryParam("userID","1")
+					.get("/getGroceryFromOrderList");
+
+		// then:
+			assertThat(response.statusCode()).isEqualTo(200);
+	}
+
 }

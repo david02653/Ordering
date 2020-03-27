@@ -169,6 +169,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>Notification</groupId>
+			<artifactId>notification</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>

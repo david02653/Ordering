@@ -6,6 +6,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import ordering.controller.OrderingController;
+import org.apache.commons.io.IOUtils;
 import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,8 +20,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import static org.junit.Assert.*;
 
 
 //Ctrl+Shift+O 可以自動導入需要的包
@@ -36,6 +39,19 @@ public class OrderingApplicationTests {
 	public void testIndex()
 	{
 		assertEquals( orderingController.index(), "success");
+	}
+
+	@Test
+	public void givenFileName_whenUsingIOUtils_thenFileData() throws IOException {
+		String expectedData = "ordering";
+
+		FileInputStream fis = new FileInputStream("src/test/resources/contracts/ordering.groovy");
+		String data = IOUtils.toString(fis, "UTF-8");
+
+		System.out.println("data：:：:：" + data);
+
+		//assertNotNull(expectedData, data.trim());
+		assertTrue(data.contains(expectedData));
 	}
 /*
 	@Test

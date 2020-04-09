@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import ordering.Ordering;
+import ordering.ContractAnalyzer;
 import ordering.feign.NotificationInterface;
 import ordering.feign.PaymentInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.net.URLEncoder;
+
 
 
 
@@ -29,10 +32,16 @@ public class OrderingController {
 	NotificationInterface notificationInterface;
 
 
+	private ContractAnalyzer contractAnalyzer = new ContractAnalyzer();
+
+
+
+
 	@Value("${server.port}")
 	String port;
 	@RequestMapping(value="/hi", method = RequestMethod.GET)
-	public String home(@RequestParam("name") String name) {
+	public String home(@RequestParam("name") String name) throws IOException {
+		contractAnalyzer.testt();
 		return "hi " + name + ", I am from port: " + port;
 	}
 

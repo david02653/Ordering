@@ -14,7 +14,7 @@ import static org.springframework.cloud.contract.verifier.assertion.SpringCloudC
 public class ContractVerifierTest extends ProviderRoleBaseTestClass {
 
 	@Test
-	public void validate_cinemacatalog_validate_primeNumber() throws Exception {
+	public void validate_validate_prime_number() throws Exception {
 		// given:
 			MockMvcRequestSpecification request = given();
 

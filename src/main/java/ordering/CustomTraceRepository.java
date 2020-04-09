@@ -7,12 +7,12 @@ import java.util.logging.Logger;
 import org.springframework.boot.actuate.trace.InMemoryTraceRepository;
 import org.springframework.stereotype.Repository;
 
-import com.google.common.collect.Ordering;
+import com.google.common.collect.ordering;
 
 @Repository
 public class CustomTraceRepository extends InMemoryTraceRepository {
 	
-	private static Logger logger = Logger.getLogger(Ordering.class.getName());
+	private static Logger logger = Logger.getLogger(ordering.class.getName());
 	
     public CustomTraceRepository() {
         super.setCapacity(1000);

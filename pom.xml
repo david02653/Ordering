@@ -24,6 +24,7 @@
 		<pact.version>3.6.7</pact.version>
 	</properties>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -131,8 +132,8 @@
 			<groupId>com.soselab</groupId>
 			<artifactId>vmamv-service-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-<!--			<scope>system</scope>-->
-<!--			<systemPath>${env.HOME}/.m2/repository/com/soselab/vmamv-service-client/0.0.1-SNAPSHOT/vmamv-service-client-0.0.1-SNAPSHOT.jar</systemPath>-->
+			<!--			<scope>system</scope>-->
+			<!--			<systemPath>${env.HOME}/.m2/repository/com/soselab/vmamv-service-client/0.0.1-SNAPSHOT/vmamv-service-client-0.0.1-SNAPSHOT.jar</systemPath>-->
 		</dependency>
 
 		<dependency>
@@ -146,19 +147,19 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
-			<scope>test</scope>
+<!--			<scope>test</scope>-->
 		</dependency>
 
 		<!-- Spring Cloud Contract Consumer -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-contract-wiremock</artifactId>
-			<scope>test</scope>
+<!--			<scope>test</scope>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-contract-stub-runner</artifactId>
-			<scope>test</scope>
+<!--			<scope>test</scope>-->
 		</dependency>
 		<!-- location of stub.jar -->
 		<dependency>
@@ -179,7 +180,27 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.5.6</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock-standalone</artifactId>
+			<version>2.20.0</version>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 	
 	<dependencyManagement>
@@ -196,6 +217,24 @@
 
 	
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/test/resources/contracts</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.groovy</include>
+				</includes>
+				<targetPath>${project.artifactId}/contracts/</targetPath>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -235,9 +274,8 @@
 					<baseClassForTests>ordering.ProviderRoleBaseTestClass</baseClassForTests>
 				</configuration>
 			</plugin>
-
-
 		</plugins>
+
 	</build>
 
 </project>

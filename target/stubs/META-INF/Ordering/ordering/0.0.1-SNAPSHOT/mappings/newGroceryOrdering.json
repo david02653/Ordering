@@ -1,5 +1,5 @@
 {
-  "id" : "be401d46-bc5a-4fd2-b385-4b2e700133aa",
+  "id" : "49f6b019-7381-4164-a905-d19690e1f633",
   "request" : {
     "urlPath" : "/newGroceryOrdering",
     "method" : "GET",
@@ -17,5 +17,5 @@
     "body" : "success",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "be401d46-bc5a-4fd2-b385-4b2e700133aa"
+  "uuid" : "49f6b019-7381-4164-a905-d19690e1f633"
 }

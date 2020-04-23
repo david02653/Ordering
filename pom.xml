@@ -154,17 +154,18 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-contract-wiremock</artifactId>
-<!--			<scope>test</scope>-->
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-contract-stub-runner</artifactId>
-<!--			<scope>test</scope>-->
+			<scope>test</scope>
 		</dependency>
 		<!-- location of stub.jar -->
 		<dependency>
 			<groupId>Payment</groupId>
 			<artifactId>payment</artifactId>
+<!--			<classifier>stubs</classifier>-->
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
@@ -172,6 +173,7 @@
 		<dependency>
 			<groupId>Notification</groupId>
 			<artifactId>notification</artifactId>
+<!--			<classifier>stubs</classifier>-->
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
@@ -222,7 +224,7 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<includes>
-					<include>**/*.properties</include>
+					<include>**/*</include>
 				</includes>
 			</resource>
 			<resource>

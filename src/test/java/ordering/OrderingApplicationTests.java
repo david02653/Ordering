@@ -15,9 +15,12 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.cloud.contract.verifier.messaging.boot.AutoConfigureMessageVerifier;
 //import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.FileInputStream;
@@ -41,7 +44,7 @@ public class OrderingApplicationTests {
 		assertEquals( orderingController.index(), "success");
 	}
 
-	@Test
+/*	@Test
 	public void givenFileName_whenUsingIOUtils_thenFileData() throws IOException {
 		String expectedData = "ordering";
 
@@ -52,7 +55,7 @@ public class OrderingApplicationTests {
 
 		//assertNotNull(expectedData, data.trim());
 		assertTrue(data.contains(expectedData));
-	}
+	}*/
 /*
 	@Test
 	public void testNewMovieOrdering() 

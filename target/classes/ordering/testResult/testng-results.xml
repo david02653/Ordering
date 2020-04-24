@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-04-24T01:03:42Z" name="Surefire suite" finished-at="2020-04-24T01:04:12Z" duration-ms="29160">
+    <groups>
+    </groups>
+    <test started-at="2020-04-24T01:03:42Z" name="Surefire test" finished-at="2020-04-24T01:04:12Z" duration-ms="29160">
+      <class name="ordering.OrderingApplicationTests">
+        <test-method signature="testIndex()[pri:0, instance:testIndex(ordering.OrderingApplicationTests)]" started-at="2020-04-24T09:04:01Z" name="testIndex" finished-at="2020-04-24T09:04:01Z" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIndex -->
+      </class> <!-- ordering.OrderingApplicationTests -->
+      <class name="ordering.ContractVerifierTest">
+        <test-method signature="validate_getMovieFromOrderList()[pri:0, instance:validate_getMovieFromOrderList(ordering.ContractVerifierTest)]" started-at="2020-04-24T09:04:07Z" name="validate_getMovieFromOrderList" finished-at="2020-04-24T09:04:08Z" duration-ms="585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_getMovieFromOrderList -->
+        <test-method signature="validate_newGroceryOrdering()[pri:0, instance:validate_newGroceryOrdering(ordering.ContractVerifierTest)]" started-at="2020-04-24T09:04:08Z" name="validate_newGroceryOrdering" finished-at="2020-04-24T09:04:10Z" duration-ms="2352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_newGroceryOrdering -->
+        <test-method signature="validate_validate_prime_number()[pri:0, instance:validate_validate_prime_number(ordering.ContractVerifierTest)]" started-at="2020-04-24T09:04:10Z" name="validate_validate_prime_number" finished-at="2020-04-24T09:04:10Z" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_validate_prime_number -->
+        <test-method signature="validate_newMovieOrdering()[pri:0, instance:validate_newMovieOrdering(ordering.ContractVerifierTest)]" started-at="2020-04-24T09:04:10Z" name="validate_newMovieOrdering" finished-at="2020-04-24T09:04:11Z" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_newMovieOrdering -->
+        <test-method signature="validate_getGroceryFromOrderList()[pri:0, instance:validate_getGroceryFromOrderList(ordering.ContractVerifierTest)]" started-at="2020-04-24T09:04:11Z" name="validate_getGroceryFromOrderList" finished-at="2020-04-24T09:04:11Z" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_getGroceryFromOrderList -->
+      </class> <!-- ordering.ContractVerifierTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

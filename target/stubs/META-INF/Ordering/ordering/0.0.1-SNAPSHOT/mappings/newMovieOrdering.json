@@ -1,5 +1,5 @@
 {
-  "id" : "3d190ef1-0c29-49c1-8427-9124c6cad2cc",
+  "id" : "0525693d-e7a3-4bde-b090-46016885f92f",
   "request" : {
     "urlPath" : "/newMovieOrdering",
     "method" : "GET",
@@ -14,5 +14,5 @@
     "body" : "success",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "3d190ef1-0c29-49c1-8427-9124c6cad2cc"
+  "uuid" : "0525693d-e7a3-4bde-b090-46016885f92f"
 }

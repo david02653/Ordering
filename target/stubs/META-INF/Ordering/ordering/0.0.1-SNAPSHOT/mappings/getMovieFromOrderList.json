@@ -1,5 +1,5 @@
 {
-  "id" : "54514ead-d727-4c9e-887e-f16b3ae59c54",
+  "id" : "279a3684-89b8-4227-855d-8b0cc690d263",
   "request" : {
     "urlPath" : "/getMovieFromOrderList",
     "method" : "GET",
@@ -13,5 +13,5 @@
     "status" : 200,
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "54514ead-d727-4c9e-887e-f16b3ae59c54"
+  "uuid" : "279a3684-89b8-4227-855d-8b0cc690d263"
 }

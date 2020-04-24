@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="2.559" tests="6" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="2.666" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.3+12-b304.10"/>
@@ -61,10 +61,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="validate_getMovieFromOrderList on validate_getMovieFromOrderList(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.489"/>
-  <testcase name="validate_newGroceryOrdering on validate_newGroceryOrdering(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="1.77"/>
-  <testcase name="validate_validate_prime_number on validate_validate_prime_number(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.035"/>
-  <testcase name="validate_newMovieOrdering on validate_newMovieOrdering(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.146"/>
-  <testcase name="validate_getGroceryFromOrderList on validate_getGroceryFromOrderList(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.114"/>
+  <testcase name="validate_getMovieFromOrderList on validate_getMovieFromOrderList(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.568"/>
+  <testcase name="validate_newGroceryOrdering on validate_newGroceryOrdering(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="1.825"/>
+  <testcase name="validate_validate_prime_number on validate_validate_prime_number(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.061"/>
+  <testcase name="validate_newMovieOrdering on validate_newMovieOrdering(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.125"/>
+  <testcase name="validate_getGroceryFromOrderList on validate_getGroceryFromOrderList(ordering.ContractVerifierTest)" classname="ordering.ContractVerifierTest" time="0.082"/>
   <testcase name="testIndex on testIndex(ordering.OrderingApplicationTests)" classname="ordering.OrderingApplicationTests" time="0.005"/>
 </testsuite>

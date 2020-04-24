@@ -136,12 +136,6 @@
 			<!--			<systemPath>${env.HOME}/.m2/repository/com/soselab/vmamv-service-client/0.0.1-SNAPSHOT/vmamv-service-client-0.0.1-SNAPSHOT.jar</systemPath>-->
 		</dependency>
 
-		<dependency>
-			<groupId>au.com.dius</groupId>
-			<artifactId>pact-jvm-provider-junit_2.12</artifactId>
-			<version>${pact.version}</version>
-			<scope>test</scope>
-		</dependency>
 
 		<!-- Spring Cloud Contract Provider -->
 		<dependency>
@@ -203,6 +197,13 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<!-- 產生Test的xml檔案(在target/surefire-reports/) -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+		</dependency>
+
 	</dependencies>
 	
 	<dependencyManagement>
@@ -219,6 +220,7 @@
 
 	
 	<build>
+<!--	要先mvn test產生檔案再mvn package or mvn install	-->
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -234,6 +236,14 @@
 					<include>**/*.groovy</include>
 				</includes>
 				<targetPath>${project.artifactId}/contracts/</targetPath>
+			</resource>
+			<resource>
+				<directory>target/surefire-reports</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<targetPath>${project.artifactId}/testResult/</targetPath>
 			</resource>
 		</resources>
 
@@ -259,7 +269,11 @@
 <!--					<skipTests>true</skipTests>-->
 <!--				</configuration>-->
 <!--			</plugin>-->
-			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
 			<!-- Info page provides Git Information -->
 			<plugin>
 			    <groupId>pl.project13.maven</groupId>

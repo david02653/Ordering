@@ -1,5 +1,5 @@
 {
-  "id" : "5a09f08e-b83c-4546-b595-4c6f17315ebe",
+  "id" : "51277200-31d8-4e7a-b75a-19b0ba9c3bd2",
   "request" : {
     "urlPath" : "/getGroceryFromOrderList",
     "method" : "GET",
@@ -13,5 +13,5 @@
     "status" : 200,
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "5a09f08e-b83c-4546-b595-4c6f17315ebe"
+  "uuid" : "51277200-31d8-4e7a-b75a-19b0ba9c3bd2"
 }

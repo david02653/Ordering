@@ -2,8 +2,6 @@ package contracts
 
 import org.springframework.cloud.contract.spec.Contract
 
-// HTTP request method (GET/POST/PUT/DELETE).
-
 [
         Contract.make {
             description ("ordering contract")

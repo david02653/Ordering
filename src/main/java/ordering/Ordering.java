@@ -25,7 +25,7 @@ public class Ordering {
 	
 	private static Logger logger = Logger.getLogger(Ordering.class.getName());
 
-	private static final String dbURL = "mongodb://cinema:cinema@140.121.196.23:4115";
+	private static final String dbURL = "mongodb://140.121.196.23:4115";
 	private static final String dbName = "OrderingList";
 	private static final String collectionName = "orderingList";
 	

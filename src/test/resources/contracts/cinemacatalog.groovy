@@ -5,6 +5,22 @@ import org.springframework.cloud.contract.spec.Contract
 [
         Contract.make {
             description ("ordering contract")
+            name ("cinemacatalog_validate_prime-number")
+            request {
+                method ("GET")
+                url("/validate/prime-number") {
+                    queryParameters {
+                        parameter("number", "2")
+                    }
+                }
+            }
+            response {
+                body("Even")
+                status (200)
+            }
+        },
+        Contract.make {
+            description ("ordering contract")
             name ("cinemacatalog_newMovieOrdering")
             request {
                 method ("GET")

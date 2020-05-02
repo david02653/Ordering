@@ -178,7 +178,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
-		<dependency>
+<!--		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>2.5.6</version>
@@ -195,7 +195,7 @@
 			<artifactId>wiremock-standalone</artifactId>
 			<version>2.20.0</version>
 			<scope>compile</scope>
-		</dependency>
+		</dependency>-->
 
 		<!-- 產生Test的xml檔案(在target/surefire-reports/) -->
 		<dependency>

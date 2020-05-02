@@ -2,11 +2,11 @@ package ordering.controller;
 
 import com.soselab.vmamvserviceclient.annotation.FeignRequest;
 import com.soselab.vmamvserviceclient.annotation.FeignRequests;
+import com.soselab.vmamvserviceclient.service.ContractAnalyzer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import ordering.Ordering;
-import ordering.ContractAnalyzer;
 import ordering.feign.NotificationInterface;
 import ordering.feign.PaymentInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +32,6 @@ public class OrderingController {
 	NotificationInterface notificationInterface;
 
 
-	private ContractAnalyzer contractAnalyzer = new ContractAnalyzer();
-
 
 
 
@@ -41,7 +39,6 @@ public class OrderingController {
 	String port;
 	@RequestMapping(value="/hi", method = RequestMethod.GET)
 	public String home(@RequestParam("name") String name) throws IOException {
-		contractAnalyzer.testt();
 		return "hi " + name + ", I am from port: " + port;
 	}
 

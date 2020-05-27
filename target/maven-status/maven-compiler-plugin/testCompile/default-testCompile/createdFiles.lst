@@ -1,0 +1,5 @@
+ordering/ProviderRoleBaseTestClass.class
+ordering/OrderingApplicationTests.class
+ordering/ContractVerifierTest.class
+ordering/ConsumerRoleBasicControllerTest_Notification.class
+ordering/ConsumerRoleBasicControllerTest_Payment.class

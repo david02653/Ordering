@@ -1,0 +1,17 @@
+{
+  "id" : "726b1e03-50a7-4eae-b33c-7492a6e23f7f",
+  "request" : {
+    "urlPath" : "/getMovieFromOrderList",
+    "method" : "GET",
+    "queryParameters" : {
+      "userID" : {
+        "equalTo" : "1"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "726b1e03-50a7-4eae-b33c-7492a6e23f7f"
+}

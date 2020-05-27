@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-05-07T13:09:46Z" name="Surefire suite" finished-at="2020-05-07T13:10:15Z" duration-ms="28340">
+    <groups>
+    </groups>
+    <test started-at="2020-05-07T13:09:46Z" name="Surefire test" finished-at="2020-05-07T13:10:15Z" duration-ms="28340">
+      <class name="ordering.OrderingApplicationTests">
+        <test-method signature="testIndex()[pri:0, instance:testIndex(ordering.OrderingApplicationTests)]" started-at="2020-05-07T21:10:04Z" name="testIndex" finished-at="2020-05-07T21:10:04Z" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIndex -->
+      </class> <!-- ordering.OrderingApplicationTests -->
+      <class name="ordering.ContractVerifierTest">
+        <test-method signature="validate_groceryinventory_newGroceryOrdering()[pri:0, instance:validate_groceryinventory_newGroceryOrdering(ordering.ContractVerifierTest)]" started-at="2020-05-07T21:10:08Z" name="validate_groceryinventory_newGroceryOrdering" finished-at="2020-05-07T21:10:13Z" duration-ms="5460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_groceryinventory_newGroceryOrdering -->
+        <test-method signature="validate_cinemacatalog_newMovieOrdering()[pri:0, instance:validate_cinemacatalog_newMovieOrdering(ordering.ContractVerifierTest)]" started-at="2020-05-07T21:10:13Z" name="validate_cinemacatalog_newMovieOrdering" finished-at="2020-05-07T21:10:13Z" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_cinemacatalog_newMovieOrdering -->
+        <test-method signature="validate_cinemacatalog_validate_prime_number()[pri:0, instance:validate_cinemacatalog_validate_prime_number(ordering.ContractVerifierTest)]" started-at="2020-05-07T21:10:13Z" name="validate_cinemacatalog_validate_prime_number" finished-at="2020-05-07T21:10:13Z" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_cinemacatalog_validate_prime_number -->
+        <test-method signature="validate_groceryinventory_getGroceryFromOrderList()[pri:0, instance:validate_groceryinventory_getGroceryFromOrderList(ordering.ContractVerifierTest)]" started-at="2020-05-07T21:10:13Z" name="validate_groceryinventory_getGroceryFromOrderList" finished-at="2020-05-07T21:10:13Z" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_groceryinventory_getGroceryFromOrderList -->
+        <test-method signature="validate_cinemacatalog_getMovieFromOrderList()[pri:0, instance:validate_cinemacatalog_getMovieFromOrderList(ordering.ContractVerifierTest)]" started-at="2020-05-07T21:10:13Z" name="validate_cinemacatalog_getMovieFromOrderList" finished-at="2020-05-07T21:10:14Z" duration-ms="157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_cinemacatalog_getMovieFromOrderList -->
+      </class> <!-- ordering.ContractVerifierTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

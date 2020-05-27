@@ -1,0 +1,18 @@
+{
+  "id" : "ab121335-07a8-4706-9803-130593052017",
+  "request" : {
+    "urlPath" : "/validate/prime-number",
+    "method" : "GET",
+    "queryParameters" : {
+      "number" : {
+        "equalTo" : "2"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "Even",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "ab121335-07a8-4706-9803-130593052017"
+}

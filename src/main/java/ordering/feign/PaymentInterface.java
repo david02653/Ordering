@@ -15,6 +15,6 @@ public interface PaymentInterface {
     String payment(@RequestParam("userID") String userID, @RequestParam("price") String price);
 
 
-    @RequestMapping(value = "/simulateError", method = RequestMethod.GET)
-    String checkOddAndEvenFromPayment(@RequestParam("number") Integer number);
+/*    @RequestMapping(value = "/simulateError", method = RequestMethod.GET)
+    String checkOddAndEvenFromPayment(@RequestParam("number") Integer number);*/
 }

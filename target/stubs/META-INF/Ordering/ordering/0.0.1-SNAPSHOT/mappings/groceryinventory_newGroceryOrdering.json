@@ -1,0 +1,21 @@
+{
+  "id" : "9eba4636-bbed-4885-80e7-2a5154891ebc",
+  "request" : {
+    "urlPath" : "/newGroceryOrdering",
+    "method" : "GET",
+    "queryParameters" : {
+      "groceryID" : {
+        "equalTo" : "5c49e70e212d8d18c0fccd55"
+      },
+      "quantity" : {
+        "equalTo" : "2"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "success",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "9eba4636-bbed-4885-80e7-2a5154891ebc"
+}

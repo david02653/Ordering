@@ -37,20 +37,20 @@ public class OrderingController {
 
 	@Value("${server.port}")
 	String port;
-	@RequestMapping(value="/hi", method = RequestMethod.GET)
+	/*@RequestMapping(value="/hi", method = RequestMethod.GET)
 	public String home(@RequestParam("name") String name) throws IOException {
 		return "hi " + name + ", I am from port: " + port;
-	}
+	}*/
 
 	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
 	public String isNumberPrime(@RequestParam("number") Integer number) {
 		return number % 2 == 0 ? "Even" : "Odd";
 	}
 
-	@RequestMapping(value="/simulateError", method = RequestMethod.GET)
+/*	@RequestMapping(value="/simulateError", method = RequestMethod.GET)
 	public String isNumberPrimeFromPayment(@RequestParam("number") Integer number) {
 		return paymentInterface.checkOddAndEvenFromPayment(number);
-	}
+	}*/
 
 	
 	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
@@ -62,7 +62,7 @@ public class OrderingController {
     }
 
 	// 模擬404
-	@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
+	/*@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value="/index2", method = RequestMethod.GET)
 	public ResponseEntity<Ordering> index2()
@@ -88,7 +88,7 @@ public class OrderingController {
 			e.printStackTrace();
 		}
 		return result;
-	}
+	}*/
 
 
 	@FeignRequests(value = {@FeignRequest(client = PaymentInterface.class, method = "payment", parameterTypes = {String.class, String.class}), @FeignRequest(client = NotificationInterface.class, method = "newNotification", parameterTypes = {String.class, String.class})})

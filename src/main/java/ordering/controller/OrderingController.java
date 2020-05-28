@@ -144,7 +144,7 @@ public class OrderingController {
     }
 
 
-	@RequestMapping(value="/payment", method = RequestMethod.GET)
+/*	@RequestMapping(value="/payment", method = RequestMethod.GET)
 	public String payment(@RequestParam("userID") String userID, @RequestParam("price") String price) {
 
 		String result = "";
@@ -156,6 +156,6 @@ public class OrderingController {
 			e.printStackTrace();
 		}
 		return result;
-	}
+	}*/
 	
 }

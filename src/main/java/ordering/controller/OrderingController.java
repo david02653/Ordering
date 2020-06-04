@@ -95,12 +95,12 @@ public class OrderingController {
 	@ApiOperation(value = "將購買電影加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "newMovieOrdering", method = RequestMethod.GET)
-    public String newMovieOrdering(@ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
+    public String newMovieOrdering(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
     {
 		try {
 			if ((Ordering.newMovieOrdering(moviesID)).equals("success"))
-				if ((paymentInterface.payment("1", "250")).equals("success"))
-					if ((notificationInterface.newNotification("1", URLEncoder.encode("ordering Movies Successfully", "UTF-8"))).equals("success"))
+				if ((paymentInterface.payment(userID, "250")).equals("success"))
+					if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Movies Successfully", "UTF-8"))).equals("success"))
 						return "success";
 		}catch (Exception e){
 			e.printStackTrace();

@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface NotificationInterface {
 
 	@RequestMapping(value = "/newNotification", method = RequestMethod.GET)
-    String newNotification(@RequestParam("userID") String userID, @RequestParam("content") String content);
+    String newNotification(@RequestParam("userID") int userID, @RequestParam("content") String content);
 
 }

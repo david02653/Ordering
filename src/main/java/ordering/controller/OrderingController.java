@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 
@@ -102,7 +103,7 @@ public class OrderingController {
 				if ((paymentInterface.payment(userID, "250")).equals("success"))
 					if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Movies Successfully", "UTF-8"))).equals("success"))
 						return "success";
-		}catch (Exception e){
+		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();
 		}
 

@@ -98,10 +98,16 @@ public class OrderingController {
     public String newMovieOrdering(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "moviesID", value = "電影編號")@RequestParam("moviesID") String moviesID)
     {
 		try {
-			if ((Ordering.newMovieOrdering(moviesID)).equals("success"))
-				if ((paymentInterface.payment(userID, "250")).equals("success"))
+			if ((Ordering.newMovieOrdering(moviesID)).equals("success")) {
+				String a = paymentInterface.payment(userID, "250");
+				String b = notificationInterface.newNotification(userID, URLEncoder.encode("ordering Movies Successfully", "UTF-8"));
+
+				System.out.println("aaaaaaaaaaaa: " + a);
+				System.out.println("bbbbbbbbbbbb: " + b);
+/*				if ((paymentInterface.payment(userID, "250")).equals("success"))
 					if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Movies Successfully", "UTF-8"))).equals("success"))
-						return "success";
+						return "success";*/
+			}
 		}catch (Exception e){
 			e.printStackTrace();
 		}

@@ -122,10 +122,8 @@ public class OrderingController {
 					if ((paymentInterface.payment(userID, "250")).equals("success")) {
 						return "success";
 					}else{
-						String str = "fail";
-						for(int i = 0; i < str.length()+2; i++){
-							System.out.println(str.charAt(i));
-						}
+						int temp = Integer.parseInt(userID);
+						String str = temp % 2 == 1 ? "success" : "fail";
 					}
 		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();

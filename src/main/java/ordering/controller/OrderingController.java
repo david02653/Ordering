@@ -118,9 +118,15 @@ public class OrderingController {
     {
 		try {
 			if ((Ordering.newGroceryOrdering(groceryID, quantity)).equals("success"))
-				if ((paymentInterface.payment(userID, "250")).equals("success"))
-					if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success"))
+				if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success"))
+					if ((paymentInterface.payment(userID, "250")).equals("success")) {
 						return "success";
+					}else{
+						String str = "fail";
+						for(int i = 0; i < str.length()+2; i++){
+							System.out.println(str.charAt(i));
+						}
+					}
 		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();
 		}

@@ -117,6 +117,7 @@ public class OrderingController {
     public String newGroceryOrdering(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
 		try {
+			System.out.println("000000000000000000000000000000");
 			if ((Ordering.newGroceryOrdering(groceryID, quantity)).equals("success")) {
 				System.out.println("111111111111111111111111111");
 				if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success")) {
@@ -134,7 +135,7 @@ public class OrderingController {
 		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();
 		}
-
+		System.out.println("55555555555555555555555555555");
 		return "fail";
     }
 	

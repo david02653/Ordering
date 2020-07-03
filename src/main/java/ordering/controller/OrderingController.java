@@ -123,9 +123,9 @@ public class OrderingController {
 
 						String str = notificationInterface.newNotification("1", URLEncoder.encode("ordering Grocery successfully", "UTF-8"));
 
-						for(int i = 0; i < str.length()+1; i++){
+/*						for(int i = 0; i < str.length()+1; i++){
 							System.out.println(str.charAt(i));
-						}
+						}*/
 						if(str.equals("success"))
 							return "success";
 //					}

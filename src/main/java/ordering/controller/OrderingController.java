@@ -114,22 +114,13 @@ public class OrderingController {
 	@ApiOperation(value = "將購買的周邊商品加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "newGroceryOrdering", method = RequestMethod.GET)
-    public String newGroceryOrdering(@ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
+    public String newGroceryOrdering(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
 		try {
 			if ((Ordering.newGroceryOrdering(groceryID, quantity)).equals("success"))
-				if ((paymentInterface.payment("1", "250")).equals("success")) {
-//					if (notificationInterface.newNotification("1", URLEncoder.encode("ordering Grocery successfully", "UTF-8")).equals("success")) {
-
-						String str = notificationInterface.newNotification("1", URLEncoder.encode("ordering Grocery successfully", "UTF-8"));
-
-/*						for(int i = 0; i < str.length()+1; i++){
-							System.out.println(str.charAt(i));
-						}*/
-						if(str.equals("success"))
-							return "success";
-//					}
-				}
+				if ((paymentInterface.payment(userID, "250")).equals("success"))
+					if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success"))
+						return "success";
 		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();
 		}

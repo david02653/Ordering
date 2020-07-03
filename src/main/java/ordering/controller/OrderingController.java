@@ -127,7 +127,7 @@ public class OrderingController {
 						return "success";
 					} else {
 						System.out.println("44444444444444444444444444444444444");
-						for(int i = 2;i>=0;i++){
+						for(int i = 0;i < 2;i++){
 							System.out.println("6 / " + i + " = " + 6/i);
 						}
 					}

@@ -127,8 +127,9 @@ public class OrderingController {
 						return "success";
 					} else {
 						System.out.println("44444444444444444444444444444444444");
-						int temp = Integer.parseInt(userID);
-						String str = temp % 2 == 1 ? "success" : "fail";
+						for(int i = 2;i>=0;i++){
+							System.out.println("6 / " + i + " = " + 6/i);
+						}
 					}
 				}
 			}

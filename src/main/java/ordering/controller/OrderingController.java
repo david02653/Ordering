@@ -43,10 +43,10 @@ public class OrderingController {
 		return "hi " + name + ", I am from port: " + port;
 	}*/
 
-	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
+/*	@RequestMapping(value="/validate/prime-number", method = RequestMethod.GET)
 	public String isNumberPrime(@RequestParam("number") Integer number) {
 		return number % 2 == 0 ? "Even" : "Odd";
-	}
+	}*/
 
 /*	@RequestMapping(value="/simulateError", method = RequestMethod.GET)
 	public String isNumberPrimeFromPayment(@RequestParam("number") Integer number) {
@@ -117,16 +117,11 @@ public class OrderingController {
     public String newGroceryOrdering(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "groceryID", value = "物品編號")@RequestParam("groceryID") String groceryID, @ApiParam(required = true, name = "quantity", value = "物品編號")@RequestParam("quantity") String quantity)
     {
 		try {
-			System.out.println("000000000000000000000000000000");
 			if ((Ordering.newGroceryOrdering(groceryID, quantity)).equals("success")) {
-				System.out.println("111111111111111111111111111");
 				if ((notificationInterface.newNotification(userID, URLEncoder.encode("ordering Grocery successfully", "UTF-8"))).equals("success")) {
-					System.out.println("22222222222222222222222222");
 					if ((paymentInterface.payment(userID, "250")).equals("success")) {
-						System.out.println("33333333333333333333333333333333");
 						return "success";
 					} else {
-						System.out.println("44444444444444444444444444444444444");
 						for(int i = 0;i < 2;i++){
 							System.out.println("6 / " + i + " = " + 6/i);
 						}
@@ -136,7 +131,6 @@ public class OrderingController {
 		}catch (UnsupportedEncodingException e){
 			e.printStackTrace();
 		}
-		System.out.println("55555555555555555555555555555");
 		return "fail";
     }
 	

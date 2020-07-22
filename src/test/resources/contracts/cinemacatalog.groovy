@@ -19,20 +19,5 @@ import org.springframework.cloud.contract.spec.Contract
                 body("success")
                 status (200)
             }
-        },
-        Contract.make {
-            description ("ordering contract")
-            name ("cinemacatalog_getMovieFromOrderList")
-            request {
-                method ("GET")
-                url("/getMovieFromOrderList") {
-                    queryParameters {
-                        parameter("userID", "1")
-                    }
-                }
-            }
-            response {
-                status (200)
-            }
         }
 ]

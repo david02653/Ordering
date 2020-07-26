@@ -20,20 +20,5 @@ import org.springframework.cloud.contract.spec.Contract
                 body("success")
                 status (200)
             }
-        },
-        Contract.make {
-            description ("ordering contract")
-            name("groceryinventory_getGroceryFromOrderList")
-            request {
-                method ("GET")
-                url("/getGroceryFromOrderList") {
-                    queryParameters {
-                        parameter("userID", "1")
-                    }
-                }
-            }
-            response {
-                status (200)
-            }
         }
 ]

@@ -13,4 +13,8 @@ public interface NotificationInterface {
 	@RequestMapping(value = "/newNotification", method = RequestMethod.GET)
     String newNotification(@RequestParam("userID") String userID, @RequestParam("content") String content);
 
+
+    @RequestMapping(value = "/getSomething2", method = RequestMethod.GET)
+    String getSomething2(@RequestParam("userID") String userID);
+
 }

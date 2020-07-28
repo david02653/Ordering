@@ -164,5 +164,18 @@ public class OrderingController {
 		}
 		return result;
 	}*/
+
+
+	@FeignRequest(client = NotificationInterface.class, method = "getSomething2", parameterTypes = String.class)
+	@ApiOperation(value = "拿東西", notes = "拿東西")
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/getSomething2", method = RequestMethod.GET)
+	public String getSomething2(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID)
+	{
+		String data = "";
+
+		return notificationInterface.getSomething2(userID);
+
+	}
 	
 }

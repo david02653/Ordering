@@ -62,8 +62,6 @@ public class OrderingController {
 		return "success";
     }*/
 
-
-
 	@FeignRequests(value = {@FeignRequest(client = PaymentInterface.class, method = "payment", parameterTypes = {String.class, String.class}), @FeignRequest(client = NotificationInterface.class, method = "newNotification", parameterTypes = {String.class, String.class})})
 	@ApiOperation(value = "將購買電影加入資料庫", notes = "成功加入資料庫就回傳success")
 	@CrossOrigin(origins = "*")

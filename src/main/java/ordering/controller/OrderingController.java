@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-
-
-
+import java.util.Random;
 
 
 @Api(value = "OrderingController", tags = "與購買相關的電影與雜物都在這裡")
@@ -125,10 +123,21 @@ public class OrderingController {
 	@ApiOperation(value = "拿資訊", notes = "拿資訊")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/getOrderingInformation", method = RequestMethod.GET)
-	public String getOrderingInformation(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID)
+	public String getOrderingInformation(@ApiParam(required = true, name = "userID", value = "使用者編號") @RequestParam("userID") String userID, @ApiParam(required = true, name = "probability", value = "出錯機率") @RequestParam("probability") double probability)
 	{
 
-		return notificationInterface.getOrderingInformation(userID);
+		Random random = new Random();
+
+		int num = random.nextInt(1000) + 1;
+
+		if(num <= (int)(probability * 1000)){
+			return notificationInterface.getOrderingInformation(userID);
+		}else{
+			return "success";
+		}
+
+
+
 
 	}
 	

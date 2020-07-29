@@ -62,34 +62,6 @@ public class OrderingController {
 		return "success";
     }*/
 
-	// 模擬404
-	/*@ApiOperation(value = "測試此伺服器是否成功連線", notes = "成功連線就回傳success")
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value="/index2", method = RequestMethod.GET)
-	public ResponseEntity<Ordering> index2()
-	{
-
-		return ResponseEntity.notFound().build();
-	}
-
-	// 模擬回應
-	@ApiOperation(value = "測試是否成功連線", notes = "成功連線就回傳success")
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value="/index3", method = RequestMethod.GET)
-	public String index3()
-	{
-
-		String result = "wait success";
-
-
-		long num = (long)(Math.random() * 30);
-		try {
-			Thread.sleep(num);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}*/
 
 
 	@FeignRequests(value = {@FeignRequest(client = PaymentInterface.class, method = "payment", parameterTypes = {String.class, String.class}), @FeignRequest(client = NotificationInterface.class, method = "newNotification", parameterTypes = {String.class, String.class})})
@@ -149,21 +121,6 @@ public class OrderingController {
     {
     	return Ordering.getGroceryFromOrderList(userID);
     }
-
-
-/*	@RequestMapping(value="/payment", method = RequestMethod.GET)
-	public String payment(@RequestParam("userID") String userID, @RequestParam("price") String price) {
-
-		String result = "";
-
-		try {
-			result = paymentInterface.payment("1", "250");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}*/
 
 
 	@FeignRequest(client = NotificationInterface.class, method = "getOrderingInformation", parameterTypes = String.class)

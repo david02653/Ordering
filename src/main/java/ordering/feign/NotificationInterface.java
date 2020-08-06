@@ -14,7 +14,7 @@ public interface NotificationInterface {
     String newNotification(@RequestParam("userID") String userID, @RequestParam("content") String content);
 
 
-    @RequestMapping(value = "/getOrderingInformation", method = RequestMethod.GET)
-    String getOrderingInformation(@RequestParam("userID") String userID);
+/*    @RequestMapping(value = "/getOrderingInformation", method = RequestMethod.GET)
+    String getOrderingInformation(@RequestParam("userID") String userID);*/
 
 }

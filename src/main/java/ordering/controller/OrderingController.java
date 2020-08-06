@@ -119,7 +119,7 @@ public class OrderingController {
     }
 
 
-	@FeignRequest(client = NotificationInterface.class, method = "getOrderingInformation", parameterTypes = String.class)
+/*	@FeignRequest(client = NotificationInterface.class, method = "getOrderingInformation", parameterTypes = String.class)
 	@ApiOperation(value = "拿資訊", notes = "拿資訊")
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/getOrderingInformation", method = RequestMethod.GET)
@@ -139,6 +139,6 @@ public class OrderingController {
 
 
 
-	}
+	}*/
 	
 }

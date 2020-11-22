@@ -28,8 +28,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Ordering")
-                .description("root：http://140.121.196.23:4105/")
-                .termsOfServiceUrl("http://140.121.196.23:4105/")
+                .description("root：http://140.121.197.130:9015/")
+                .termsOfServiceUrl("http://140.121.197.130:9015/")
                 .contact("俊佑")
                 .version("1.0")
                 .build();
